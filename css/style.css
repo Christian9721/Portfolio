@@ -39,7 +39,7 @@ body{
 }
 .home::before{
     content: '';
-    background-image:  url('bg.png');
+    background-image:  url('../images/bg.png');
     background-position: center;
     background-size: cover;
     background-position-x: initial;
@@ -395,7 +395,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('bg2.png');
+    background-image: url('../images/bg2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;

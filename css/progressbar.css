@@ -94,12 +94,12 @@ a.button {
     top: -6px;
 }
 .open{
-    background-image: url('./download.svg');
+    background-image: url('../images/download.svg');
     background-repeat: no-repeat; 
     background-size: 50%;
 }
 .download{
-    background-image: url('./download_before.svg');
+    background-image: url('../images/download_before.svg');
     background-repeat: no-repeat; 
     background-size: 50%;
 }
@@ -111,7 +111,7 @@ a.button {
     left: -7px;
 }
 .maps{
-    background-image: url('maps.svg');
+    background-image: url('../images/maps.svg');
     width: 20px;
     background-repeat: no-repeat;
     height: 20px;

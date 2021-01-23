@@ -18,10 +18,10 @@
     visibility: visible;
 }
 .pianoico{
-    background-image: url('piano.svg');
+    background-image: url('../images/piano.svg');
 }
 .quantumico{
-    background-image: url('quantumchip.svg');
+    background-image: url('../images/quantumchip.svg');
     margin-top: 2px;
 }
 .icons{
