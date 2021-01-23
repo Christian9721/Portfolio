@@ -88,7 +88,7 @@ function TapLang(event)
 }
 function FillText(id)
 {
-    $.getJSON("/json/infolang.json", function(json)
+    $.getJSON("./json/infolang.json", function(json)
     {
         NameLang.innerHTML = id;
         NameText.innerHTML = json[id]["text"];
