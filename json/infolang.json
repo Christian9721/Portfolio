@@ -211,7 +211,7 @@
                 "name":"UJED",
                 "period":"",
                 "description":"I developed the language center website. My job was to bring to reality the AdobeXD design of another colleague and consume the data from the Django's API.",
-                "tools":["AdobeXD","VS Code","HTML","Javascript","CSS","Sass","Django","PostgreSQL"]
+                "tools":["AdobeXD","Vue.js","Sass","Django","PostgreSQL"]
             }         
         ],
         "description":"Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.",

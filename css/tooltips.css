@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Elegancy";
+    src: url("../fonts/Amperzand.ttf");
+}
+
 .toolTip .tooltiptext {
     visibility: hidden;
     width: 120px;
@@ -50,4 +55,34 @@
 }
 .aboutcontent p{
     margin-bottom: 0 !important;
+}
+.Info{
+    position: relative;
+    padding-left: 8px;
+    font-family: none;
+    float: right;
+    color: white;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.Info .Infotext{
+    visibility: hidden;
+    width: 16rem;
+    background-color: #00000094;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: 23px;
+    right: -55%;
+    font-size: 0.8rem;
+    font-weight: normal;
+} 
+.Info:hover .Infotext {
+    visibility: visible;
 }

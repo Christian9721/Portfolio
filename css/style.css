@@ -209,7 +209,11 @@ body{
     font-size: 2.4em;
     font-weight: 600;
 }
-
+.aboutCard{
+    margin-right: 15% !important;
+    width: 80%;
+    margin-left: auto !important;
+}
                                             /* about row */
 .photo{
     overflow: hidden;
@@ -230,6 +234,10 @@ body{
         border-bottom-left-radius: 0 !important;
         border-bottom-right-radius: 0 !important;
     }
+    .aboutCard{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }    
 }
 @-webkit-keyframes filter-animation {
     0% {
@@ -322,7 +330,7 @@ body{
 
                                    /* services */
 .services{
-    background-color: black;
+    background-color: #141414;
     min-height: 100vh;
     width: 100%;
     margin-top: 3em;
@@ -387,31 +395,36 @@ body{
     background-color: rgb(255, 255, 255);
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     color: black !important;
-    padding: 4px;
+    padding: 3px;
     border-radius: 4px;
+    margin-right: 5px;
 }                                           /* skills */                                           
 .skills{
     min-height: 100vh;   
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('../images/bg2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
 }
 .skills > div{
     padding: 5em 0 2em 0;
-    backdrop-filter: blur(5px);
     margin: 0;
     padding-left: 15px;
     padding-right: 15px;
 }
-.skills .panel{
+.skills .panel
+{
     padding: 1rem;
     background-color: #f0f8ff36;
     border-radius: 10px;
     margin:auto;
+    box-shadow: inset 6px 6px 10px 0 rgb(0 0 0 / 20%), inset -6px -6px 10px 0 rgb(255 255 255 / 50%);
+}
+@media(max-width:466px)
+{
+    .skills .panel { width: 100%; }
 }
 .skills .Grid{
   display: grid;
@@ -419,6 +432,8 @@ body{
   margin: auto;
   margin-top: 18px;
   margin-bottom: 18px;
+  padding-top: 5px;
+  padding-bottom: 10px;
   grid-auto-flow: column;
   overflow-y:hidden;
   overflow-x: scroll;
@@ -426,21 +441,26 @@ body{
   -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 95%, rgba(255,255,255,0) 100%);
 }
 
-.Grid::-webkit-scrollbar {
+.Grid::-webkit-scrollbar, #NameCompany_List::-webkit-scrollbar{
     width: 10px;
     height: 10px;
+    
   }
-  .Grid::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.5);
+  .Grid::-webkit-scrollbar-thumb, #NameCompany_List::-webkit-scrollbar-thumb {
+    background: linear-gradient(117deg, rgb(41, 41, 41) 0%, rgb(32, 32, 32) 100%);
     border-radius: 10px;
   }
-  .Grid::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.226);
+  .Grid::-webkit-scrollbar-track, #NameCompany_List::-webkit-scrollbar-track{
+    background: rgb(189, 189, 189);
     border-radius: 10px;
-  }
+    box-shadow: inset 6px 6px 10px 0 rgb(0 0 0 / 20%), inset -6px -6px 10px 0 rgb(255 255 255 / 50%);
+}
   .row h3{
       display: block;
-      margin: auto;
+      margin: auto;   
+      font-weight: 600;
+      font-variant: petite-caps;
+      /*font-family: "Elegancy";*/
   }
 @media(max-width: 636px)
 {

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/tooltips.css">
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/badges.css">
+    <link rel="stylesheet" href="css/chart.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,7 +24,7 @@
     <!-- Home --> 
     <div id="home" class="container-fluid home p-0">
             <nav class="Logo navbar navbar-expand-md navbar-dark fixed-top px-5">
-                <a href="#" class="navbar-brand">Portfolio <span class="kangi">烏</span></a>
+                <a href="#" class="navbar-brand"><span class="kangi">烏</span>Portfolio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsecontent" aria-controls="collapsecontent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,7 +58,7 @@
         <div class="title">
             <h1>About me</h1>
         </div>
-        <div class="row" style="margin-right: 10px;">
+        <div class="row aboutCard">
             <div class="col-8 col-md-4 myimg" style="position: relative;">
                 <div class="card photo">
                     <img src="./images/examplecv.jpg" alt="picture">                  
@@ -94,61 +95,10 @@
      <!-- Projects--> 
     <div id="projects" class="container-fluid services">
         <div class="title">
-            <h2>Projects</h2>
+            <h2>Featured Projects</h2>
         </div>
         <div class="row px-2">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card mb-3 border-0">
-                    <div class="card-body">
-                        <span><i class="fa fa-paint-brush" aria-hidden="true"></i></span>
-                        <div class="card-title">Web Design</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non asperiores iure et. Neque perferendis, delectus odio dolor id ullam?</div>
-                    </div>
-                    <div class="card-img-overlay">
-                        <span><i class="fa fa-paint-brush" aria-hidden="true"></i></span>
-                        <div class="card-title">Web Design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card mb-3 border-0">
-                    <div class="card-body">
-                        <span><i class="fab fa-html5" aria-hidden="true"></i></span>
-                        <div class="card-title">HTML5</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non asperiores iure et. Neque perferendis, delectus odio dolor id ullam?</div>
-                    </div>
-                    <div class="card-img-overlay">
-                        <span><i class="fab fa-html5" aria-hidden="true"></i></span>
-                        <div class="card-title">HTML5</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card mb-3 border-0">
-                    <div class="card-body">
-                        <span><i class="fab fa-css3-alt"></i></span>
-                        <div class="card-title">CSS3</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non asperiores iure et. Neque perferendis, delectus odio dolor id ullam?</div>
-                    </div>
-                    <div class="card-img-overlay">
-                        <span><i class="fab fa-css3-alt"></i></span>
-                        <div class="card-title">CSS3</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card mb-3 border-0">
-                    <div class="card-body">
-                        <span><i class="fab fa-bootstrap"></i></span>
-                        <div class="card-title">Bootstrap</div>
-                        <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic non asperiores iure et. Neque perferendis, delectus odio dolor id ullam?</div>
-                    </div>
-                    <div class="card-img-overlay">
-                        <span><i class="fab fa-bootstrap"></i></span>
-                        <div class="card-title">Bootstrap</div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
                                             <!-- Skills --> 
@@ -163,6 +113,10 @@
             <hr>
         </div>
         <div class="row p-5">
+            <div id="ShowArrow" class="Arrow">
+                <p>Tap to display information</p>
+                <div style="width: 100%; height: 100%;"></div>
+            </div>
             <div style="max-width: 100%;">
                 <h3>Languages</h3>
                 <div class="Grid">                
@@ -327,9 +281,13 @@
                     </div>
             </div>           
             </div>
-            <div class="col-12 col-lg-6 text panel">
-                <h2 id="NameLang">My creative skills and experience</h2>
-                <p id="NameText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aliquam nisi rem aliquid, nihil quisquam culpa provident, quod, voluptate excepturi perspiciatis debitis dolorum odit? Mollitia consectetur ipsam repellat dolorum reiciendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, cumque?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, eius.</p>
+            <div class="text panel">
+                <h2 id="NameLang" style="display: inline-block;"></h2>
+                <span class="toolTip Info">
+                    i<span class="Infotext" id="TipLang"></span>
+                </span>     
+                <hr>
+                <p id="NameText"></p>
                 <div class="badgesdiv">
                     <div class="double-val-label">
                         <span>Dominated</span>
@@ -339,6 +297,9 @@
                         <span>Experience</span>
                         <span id="NameYears" style="background-color:#7050ac;"></span>               
                     </div>
+                </div>
+                <div class="TableContent">
+                    <table id="NameCompany_List" class="table table-striped table-dark table-hover table-responsive"></table>
                 </div>
             </div>           
         </div>
