@@ -96,6 +96,7 @@ function TapLang(event)
 
 var TableCompanny = document.querySelector("#NameCompany_List");
 var TipLang = document.getElementById("TipLang");
+var ProjectList_root = document.getElementById("ProjectLst");
 
 function FillText(id)
 {      
@@ -105,7 +106,6 @@ function FillText(id)
         var temTbody = document.querySelector("#tempTbody");
         if(tempThead != null){TableCompanny.removeChild(tempThead);}
         if(temTbody != null){TableCompanny.removeChild(temTbody);}
-
 
         NameLang.innerHTML = id;
         NameText.innerHTML = json[id]["text"];
@@ -195,15 +195,24 @@ function FillText(id)
                 } 
             }
         }
+        var temp_RootProjects = document.getElementById("root_projects");
+        
+        if(temp_RootProjects!=null){ProjectList_root.removeChild(temp_RootProjects);}
+
         var projects_length = json[id]["projects"].length;
+
         if(projects_length>0)
-        {
-            var ProjectList_root = document.getElementById("ProjectLst");
+        {           
+            var rootProjectDiv =document.createElement("div");
+                rootProjectDiv.setAttribute("id","root_projects");
+            ProjectList_root.appendChild(rootProjectDiv);
+
             for(var i=0; i<projects_length; i++)
             {               
                 var ul = document.createElement("ul");
                     ul.setAttribute("id","lst");
-                ProjectList_root.appendChild(ul);
+                rootProjectDiv.appendChild(ul);
+                
                 var li = document.createElement("li");
                 ul.appendChild(li);
                 var input = document.createElement("input");
