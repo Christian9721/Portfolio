@@ -113,7 +113,7 @@ function FillText(id)
         NameYears.innerHTML = `${json[id]["years"] + 1}+`;
         TipLang.innerHTML = json[id]["description"];
         
-        var companny_length = json[id]["companny_list"].length;      
+        var companny_length = json[id]["companny_list"].length; 
        
         if( companny_length > 0)
         {       
@@ -122,7 +122,9 @@ function FillText(id)
                 thead.setAttribute("id","tempThead");
             var tr = document.createElement("tr");
             var th = document.createElement("th");
-                th.innerHTML = "#";               
+                th.innerHTML = "#";     
+            var th_img = document.createElement("th");
+                th_img.innerHTML = "Image";           
             var th_companny = document.createElement("th");
                 th_companny.innerHTML = "Companny";
             var th_description = document.createElement("th");
@@ -135,15 +137,18 @@ function FillText(id)
                 th_companny.setAttribute("scope","col"); 
                 th_description.setAttribute("scope","col");
                 th_tools.setAttribute("scope","col"); 
+
+                
                 /*End attributes*/ 
           
             TableCompanny.appendChild(thead).appendChild(tr);
 
             tr.appendChild(th);
             tr.appendChild(th_companny);
+            tr.appendChild(th_img);           
             tr.appendChild(th_description);
             tr.appendChild(th_tools);
-
+           
             /*ROWS*/ 
             var tbody = document.createElement("tbody");
                 tbody.setAttribute("id","tempTbody");
@@ -161,12 +166,21 @@ function FillText(id)
                     th_body.innerHTML = (i + 1);
                     th.setAttribute("scoped","row");
                 var td_name = document.createElement("td");
+                var td_img = document.createElement("img");
+                
                     td_name.innerHTML = element["name"];
                 var td_description = document.createElement("td");
                     td_description.innerHTML = element["description"];
                 var td_tools = document.createElement("td");
+                /*
+                Adding Attributes
+                */
+                td_img.setAttribute("id","ipicData"+(i+1));
+                td_img.setAttribute("class","ImgTable");
+                td_img.src="./images/bg.png"
 
                 tr_body.appendChild(td_name);
+                tr_body.appendChild(td_img);
                 tr_body.appendChild(td_description);
                 tr_body.appendChild(td_tools);   
                 
@@ -179,6 +193,54 @@ function FillText(id)
                         tempSpan.setAttribute("class","Tools");
                     td_tools.appendChild(tempSpan);
                 } 
+            }
+        }
+        var projects_length = json[id]["projects"].length;
+        if(projects_length>0)
+        {
+            var ProjectList_root = document.getElementById("ProjectLst");
+            for(var i=0; i<projects_length; i++)
+            {               
+                var ul = document.createElement("ul");
+                    ul.setAttribute("id","lst");
+                ProjectList_root.appendChild(ul);
+                var li = document.createElement("li");
+                ul.appendChild(li);
+                var input = document.createElement("input");
+                    input.setAttribute("type","checkbox");
+                    input.setAttribute("name","list");
+                    input.setAttribute("id","nivel" + (i+1));
+                li.appendChild(input);
+                var label = document.createElement("label");
+                    label.setAttribute("for","nivel" + (i+1));
+                    label.innerHTML = json[id]["projects"][i]["name"];
+                li.appendChild(label);
+                var ul_interior = document.createElement("ul");
+                    ul_interior.setAttribute("class","interior");
+                li.appendChild(ul_interior);
+                var li_interior = document.createElement("li");
+                    ul_interior.appendChild(li_interior);
+                var div = document.createElement("div");
+                li_interior.appendChild(div);
+                var img = document.createElement("img");
+                    img.setAttribute("class","ImgTable");
+                    img.src="./images/bg.png";
+                div.appendChild(img);
+                var hr = document.createElement("hr");
+                div.appendChild(hr);
+                var p = document.createElement("p");
+                    p.innerHTML = json[id]["projects"][i]["description"];
+                div.appendChild(p);
+                
+                var url = json[id]["projects"][i]["url"];
+                if(url!=="")
+                {
+                    var a = document.createElement("p");
+                    a.setAttribute("class","btn btn-dark");
+                    a.innerHTML = "See more";
+                    a.href = url;
+                    div.appendChild(a);
+                }             
             }
         }
     });

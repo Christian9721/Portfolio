@@ -2,25 +2,12 @@
     "C#":
     {
         "text":"It is one of my favorite programming languages, I have used it both in personal projects and in companies.",
-        "companny_list": [],       
+        "companny_list":[],       
         "description":"It is a multi-paradigm programming language developed and standardized by Microsoft as part of its .NET platform.",
         "years":4,
         "exp":90,
         "desc":"I handle this language at an advanced level: polymorphism, abstraction, interfaces, generics, multithreading etc.",
-        "projects":
-        [
-            {
-                "name":"",
-                "description":"",
-                "url":""
-            }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects": []
     },
     "HTML":
     {
@@ -35,15 +22,16 @@
             {
                 "name":"",
                 "description":"",
-                "url":""
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
             }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
         ]
+        
     },
     "CSS":
     {
@@ -53,13 +41,7 @@
         "years":3,
         "exp":90,
         "desc":"",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Javascript":
     {
@@ -69,13 +51,7 @@
         "years":3,
         "exp":80,
         "desc":"Is one of the languages that I like the most, the libraries that the community creates around this language are spectacular.",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Flutter":
     {
@@ -85,13 +61,20 @@
         "years":2,
         "exp":90,
         "desc":"I have used it for personal projects, from designing interfaces to creating the concept of an app",
-        "projects":[],
-        "img":
+        "projects":
         [
-            "",
-            "",
-            ""
-        ]
+            {
+                "name":"",
+                "description":"",
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            }
+        ]       
     },
     "Dart":
     {
@@ -101,13 +84,7 @@
         "years":2,
         "exp":50,
         "desc":"In addition to Flutter, I have used Dart for work with ",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Git":
     {
@@ -116,7 +93,12 @@
         [            
             {
                 "name":"UJED",
-                "period":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ],
                 "description":"We used git for version control and to separate frontend and backend logic.",
                 "tools":["Git", "VS Code","Github Desktop"]
             }         
@@ -125,13 +107,7 @@
         "years":2,
         "exp":85,
         "desc":"",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Java":
     {
@@ -141,13 +117,7 @@
         "years":2,
         "exp":70,
         "desc":"With it I practiced interfaces, logic and unit tests with Selenium.",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Laravel":
     {
@@ -162,15 +132,15 @@
             {
                 "name":"",
                 "description":"",
-                "url":""
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
             }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        ]   
     },
     "MySql":
     {
@@ -179,13 +149,23 @@
         [            
             {
                 "name":"Centro de salud #2",
-                "period":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ],
                 "description":"I decided to use MySql as it is a local database shared between the local computers.",
                 "tools":["C#","MySQL","WinForms","Visual Studio"]
             },
             {
                 "name":"Dental Space",
-                "period":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ],
                 "description":"I decided to use MySql because I found all the benefits of queries and relationships.",
                 "tools":["C#","MySQL","WinForms","Visual Studio"]
             }          
@@ -194,13 +174,7 @@
         "years":4,
         "exp":80,
         "desc":"",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Vuejs":
     {
@@ -209,7 +183,12 @@
         [            
             {
                 "name":"UJED",
-                "period":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ],
                 "description":"I developed the language center website. My job was to bring to reality the AdobeXD design of another colleague and consume the data from the Django's API.",
                 "tools":["AdobeXD","Vue.js","Sass","Django","PostgreSQL"]
             }         
@@ -218,20 +197,7 @@
         "years":1,
         "exp":80,
         "desc":"",
-        "projects":
-        [
-            {
-                "name":"",
-                "description":"",
-                "url":""
-            }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]       
     },
     "React":
     {
@@ -241,13 +207,7 @@
         "years":1,
         "exp":80,
         "desc":"",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Python":
     {
@@ -257,13 +217,7 @@
         "years":1,
         "exp":70,
         "desc":"",
-        "projects":[],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "DotNet":
     {
@@ -272,9 +226,14 @@
         [            
             {
                 "name":"Centro de salud #2",
-                "period":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ],
                 "description":"I developed a program to manage patients and control the clinic's medications.",
-                "tools":["C#","MySQL","WinForms","Visual Studio"]
+                "tools":["C#","MySQL","WinForms","Visual Studio"]               
             },
             {
                 "name":"Dental Space",
@@ -292,15 +251,15 @@
             {
                 "name":"",
                 "description":"",
-                "url":""
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
             }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        ]       
     },
     "Electron":
     {
@@ -315,28 +274,20 @@
             {
                 "name":"",
                 "description":"",
-                "url":""
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
             }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        ]      
     },
     "Unity":
     {
         "text":"This game engine has it all! I did several internships and personal projects with it, among them an online multiplayer.",
-        "companny_list":
-        [            
-            {
-                "name":"",
-                "period":"",
-                "description":"",
-                "tools":[]
-            }         
-        ],
+        "companny_list":[],
         "description":"Unity is a cross-platform video game engine created by Unity Technologies. Unity is available as a development platform for Microsoft Windows, Mac OS, Linux, Windows Vista, Mac OS X and Linux.",
         "years":3,
         "exp":90,
@@ -344,17 +295,28 @@
         "projects":
         [
             {
-                "name":"",
-                "description":"",
-                "url":""
+                "name":"Lixenium",
+                "description":"Multiplayer Videogame. Play around the gigant real time equalizer.",
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "name":"Among Spikes",
+                "description":"Dodge the enemies and add points around a world of spikes.",
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
             }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        ]      
     },
     "AdobeXD":
     {
@@ -363,7 +325,12 @@
         [            
             {
                 "name":"UJED",
-                "period":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ],
                 "description":"",
                 "tools":["AdobeXD","Vue.js","Django","PostgreSQL"]
             }         
@@ -372,20 +339,7 @@
         "years":0,
         "exp":60,
         "desc":"",
-        "projects":
-        [
-            {
-                "name":"",
-                "description":"",
-                "url":""
-            }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        "projects":[]
     },
     "Premiere":
     {
@@ -400,14 +354,14 @@
             {
                 "name":"",
                 "description":"",
-                "url":""
+                "url":"",
+                "img":
+                [
+                    "",
+                    "",
+                    ""
+                ]
             }
-        ],
-        "img":
-        [
-            "",
-            "",
-            ""
-        ]
+        ]     
     }
 }
