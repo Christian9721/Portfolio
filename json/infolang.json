@@ -7,7 +7,18 @@
         "years":4,
         "exp":90,
         "desc":"I handle this language at an advanced level: polymorphism, abstraction, interfaces, generics, multithreading etc.",
-        "projects": []
+        "projects": 
+        [
+            {
+                "name":"KeyLogger",
+                "description":"I made a keylogger for Windows.",
+                "url":"",
+                "img":
+                [
+                    "./images/c_sharp/keylogger.png"
+                ]
+            }
+        ]
     },
     "HTML":
     {
@@ -20,14 +31,12 @@
         "projects":
         [
             {
-                "name":"",
-                "description":"",
-                "url":"",
+                "name":"mayen-studios.com",
+                "description":"This is my personal web to show my projects.",
+                "url":"https://mayen-studios.github.io/Home/",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/html/web1.png"
                 ]
             }
         ]
@@ -64,14 +73,16 @@
         "projects":
         [
             {
-                "name":"",
-                "description":"",
+                "name":"Pet Finder",
+                "description":"This app (WIP) allows to find your pet, find shops, post, chat and more.",
                 "url":"",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/flutter/pet1.png",
+                    "./images/flutter/pet2.png",
+                    "./images/flutter/pet3.png",
+                    "./images/flutter/pet4.png",
+                    "./images/flutter/pet5.png"
                 ]
             }
         ]       
@@ -151,9 +162,9 @@
                 "name":"Centro de salud #2",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/dot_net/farmacia/farmacia1.png",
+                    "./images/dot_net/farmacia/farmacia2.png",
+                    "./images/dot_net/farmacia/farmacia3.png"
                 ],
                 "description":"I decided to use MySql as it is a local database shared between the local computers.",
                 "tools":["C#","MySQL","WinForms","Visual Studio"]
@@ -162,9 +173,7 @@
                 "name":"Dental Space",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/mysql/mysql1.png"
                 ],
                 "description":"I decided to use MySql because I found all the benefits of queries and relationships.",
                 "tools":["C#","MySQL","WinForms","Visual Studio"]
@@ -185,9 +194,11 @@
                 "name":"UJED",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/vue/cele/cele0.png",
+                    "./images/vue/cele/cele1.png",
+                    "./images/vue/cele/cele2.png",
+                    "./images/vue/cele/cele3.png",
+                    "./images/vue/cele/cele4.png"
                 ],
                 "description":"I developed the language center website. My job was to bring to reality the AdobeXD design of another colleague and consume the data from the Django's API.",
                 "tools":["AdobeXD","Vue.js","Sass","Django","PostgreSQL"]
@@ -197,7 +208,21 @@
         "years":1,
         "exp":80,
         "desc":"",
-        "projects":[]       
+        "projects":
+        [
+            {
+                "name":"Food Folks",
+                "description":"My team and I made a website for a restaurant, this helps to control the products, generate a ticket and more.",
+                "url":"",
+                "img":
+                [
+                    "./images/vue/food/food0.png",
+                    "./images/vue/food/food1.png",
+                    "./images/vue/food/food2.png",
+                    "./images/vue/food/food3.png"
+                ]
+            }
+        ]       
     },
     "React":
     {
@@ -228,16 +253,21 @@
                 "name":"Centro de salud #2",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/dot_net/farmacia/farmacia1.png",
+                    "./images/dot_net/farmacia/farmacia2.png",
+                    "./images/dot_net/farmacia/farmacia3.png"
                 ],
                 "description":"I developed a program to manage patients and control the clinic's medications.",
                 "tools":["C#","MySQL","WinForms","Visual Studio"]               
             },
             {
                 "name":"Dental Space",
-                "period":"",
+                "img":
+                [
+                    "./images/dot_net/dental_space/dental1.png",
+                    "./images/dot_net/dental_space/dental2.png",
+                    "./images/dot_net/dental_space/dental3.png"
+                ],
                 "description":"I developed a program to manage suppliers, control inventory, control customer orders and manage product pricing.",
                 "tools":["C#","MySQL","WinForms","Visual Studio"]
             }         
@@ -249,14 +279,22 @@
         "projects":
         [
             {
-                "name":"",
-                "description":"",
+                "name":"Installer",
+                "description":"I made a installer for the private project 'Food Folks!'",
                 "url":"",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/dot_net/food_folks/installer1.png",
+                    "./images/dot_net/food_folks/installer2.png"
+                ]
+            },
+            {
+                "name":"Simple IA",
+                "description":"I made a multi-threading program to simulate the shortest path",
+                "url":"",
+                "img":
+                [
+                    "./images/dot_net/ia/ia1.png"
                 ]
             }
         ]       
@@ -300,20 +338,20 @@
                 "url":"",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/unity/lixenium/lixenium1.png",
+                    "./images/unity/lixenium/lixenium2.png",
+                    "./images/unity/lixenium/lixenium3.png",
+                    "./images/unity/lixenium/lixenium4.png"
                 ]
             },
             {
                 "name":"Among Spikes",
                 "description":"Dodge the enemies and add points around a world of spikes.",
-                "url":"",
+                "url":"https://play.google.com/store/apps/details?id=mayenstudios.amongspikes&hl=es_419&gl=US",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/unity/among_spikes/among1.png",
+                    "./images/unity/among_spikes/among2.png"
                 ]
             }
         ]      

@@ -177,7 +177,7 @@ function FillText(id)
                 */
                 td_img.setAttribute("id","ipicData"+(i+1));
                 td_img.setAttribute("class","ImgTable");
-                td_img.src="./images/bg.png"
+                td_img.src=element["img"][0];
 
                 tr_body.appendChild(td_name);
                 tr_body.appendChild(td_img);
@@ -233,7 +233,7 @@ function FillText(id)
                 li_interior.appendChild(div);
                 var img = document.createElement("img");
                     img.setAttribute("class","ImgTable");
-                    img.src="./images/bg.png";
+                    img.src=json[id]["projects"][i]["img"][0];
                 div.appendChild(img);
                 var hr = document.createElement("hr");
                 div.appendChild(hr);
@@ -244,7 +244,7 @@ function FillText(id)
                 var url = json[id]["projects"][i]["url"];
                 if(url!=="")
                 {
-                    var a = document.createElement("p");
+                    var a = document.createElement("a");
                     a.setAttribute("class","btn btn-dark");
                     a.innerHTML = "See more";
                     a.href = url;

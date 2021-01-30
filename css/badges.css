@@ -219,12 +219,10 @@ label
         font-size: 30px;
         position: relative;
         top: 4px;
-        right: 70px;
     }
     #lst input:checked ~ label:before 
     { 
       content: "\025be";
-      right: 70px;
       position: relative;
     }
     #lst .interior
@@ -239,3 +237,4 @@ label
         display:block;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
+    .interior img{margin-top: 0;}
