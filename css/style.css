@@ -13,17 +13,23 @@ body{
 }
 .scroll-up-btn{
     position: fixed;
-    background-color: rgb(136, 40, 136);
-    color: white;
-    padding: 0.5em 0.7em;
-    border-radius: 5px;
+    background-color: #141414;
+    color: black;
+    padding: 0.5em 0.8em;
+    border-radius: 50%;
     right: 3%;
     bottom: 3%;
     z-index: 999;
     pointer-events: none;
     cursor: pointer;
     opacity: 0;
+    mix-blend-mode: difference;
     transition: 0.3s ease;
+    backdrop-filter: invert(1);
+}
+.scroll-up-btn >i::before{
+    content: "\f077";
+    filter: invert(1);
 }
 .scroll-up-btn.show{
     opacity: 1;
@@ -337,7 +343,6 @@ body{
     padding: 5em 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }   
 .services .title{
     text-align: center;
@@ -349,39 +354,32 @@ body{
     font-size: 2.3em;
     font-weight: 600;
     color: white;
+}                          
+.Featured{
+    width: 233px;
+    height: 441px;
+    position: absolute;
 }
-
-                                                /* services card */
-.services .card-body{
-    background-color: rgb(59, 56, 56) !important;
-    color: white;
-    text-align: center;
+.Featured::before{
+    content: '';
+    background-image: url(../images/flutter/pet1.png);
+    height: 356px;
+    width: 200px;
+    left: 14px;
+    top: 16px;
+    border-radius: 0px;
+    position: absolute;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 96% 100%, 4% 100%, 0% 80%, 0% 20%);
 }
-.services .card-body i{
-    font-size: 2.5em;
-}
-.services .card-body .card-title{
-    font-size: 1.4em;
-    font-weight: 600;
-    padding-top: 10px;
-}
-.services .card-img-overlay{
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.services .card-img-overlay i{
-    font-size: 8em;
-}
-.services .card-img-overlay .card-title{
-    font-size: 1.4em;
-    font-weight: 600;
-    padding-top: 10px;
-}
-.services .card:hover .card-img-overlay{
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.Featured::after{
+    content: '';
+    background-image: url(../images/featured/cel2.png);
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .Logo a{
