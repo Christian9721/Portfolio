@@ -362,15 +362,18 @@ body{
 }
 .Featured::before{
     content: '';
-    background-image: url(../images/flutter/pet1.png);
-    height: 356px;
-    width: 200px;
-    left: 14px;
-    top: 16px;
-    border-radius: 0px;
+    width: 208px;
+    height: 360px;
     position: absolute;
-    background-size: cover;
-    clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 96% 100%, 4% 100%, 0% 80%, 0% 20%);
+    left: 10px;
+    top: 10px;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: contain;
+    z-index: 1;
+    border-radius: 30px;
+    mix-blend-mode: hard-light;
+    opacity: 0.8;
 }
 .Featured::after{
     content: '';
@@ -378,8 +381,10 @@ body{
     width: inherit;
     height: inherit;
     position: absolute;
+    left: 0;
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: 2;
 }
 
 .Logo a{
