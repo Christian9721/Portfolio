@@ -61,7 +61,7 @@
     z-index: 3;
     border-radius: 30px;
     mix-blend-mode: hard-light;
-    opacity: 0.8;
+    opacity: 0.4;
 }
 .PetVideo::after{
     content: '';
@@ -83,10 +83,14 @@
     margin-top: 15px;
 }
 .Petinfo > h3{color: white;}
+.Petinfo > p{
+    color: #a8a8a8; 
+}
 .Petinfo > div
 {
     color: #d5d5d5;
     margin-top: 90px;
+    text-align: justify;
 }
 .Petinfo  span
 {
@@ -196,6 +200,13 @@
     position: relative;
     left: -243px;
     width: 100%;
+    text-align: justify;
+}
+.Lixinfo > p{
+    color: #a8a8a8; 
+    margin-top: 10px;
+    position: relative;
+    margin-left: 160px;
 }
 .Lixinfo  span
 {
@@ -208,4 +219,146 @@
     margin-top: 0px;
     background-size: contain;
     filter: invert(1);
+}
+/*Pet*/
+@media(max-width:628px)
+{
+    .Petinfo{ margin-top: -50px; }
+    .Petinfo > div
+    {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .PetVideo #firstPetSpan
+    {
+        left: 83px;
+    }
+    .PetVideo #firstPetSpan:hover{left: 220px;}
+}
+@media(max-width:445px)
+{
+    .Petinfo > div { margin-top: 70px; }
+    .PetVideo #firstPetSpan::after{content: none;}
+    .PetVideo #firstPetSpan
+    {
+        left: 15px;
+        top: 463px;
+        border-radius: 15px;
+        padding: 0.1rem;
+        text-align: center;
+    }
+    .PetVideo #firstPetSpan:hover{left: 15px;}
+}
+/*Lix*/
+@media(max-width:670px)
+{
+    
+    .Lixinfo{ display: contents; }
+    .Lixinfo > h3
+    {
+        position: absolute;
+        margin-top: 200px;
+        left: -100px;
+    }
+    .Lixinfo > p
+    {
+        position: absolute;
+        margin-top: 205px;
+        margin-left: 220px;
+    }
+    .Lixinfo > div
+    {
+        margin-top: -130px;
+        position: relative;
+        margin-left: 45px;
+        margin-right: 145px;
+        left: 0;
+    }
+    .LixVideo #firstLixSpan{
+        position: absolute;
+        color: whitesmoke;
+        left: 0;
+        top: 110px;
+        width: 155%;
+        background-color: #5c85b6;
+        padding: 0.1rem;
+        z-index: 0;
+        cursor: context-menu;
+        transition: 0.5s;
+        box-shadow: #e0e0e040 0px 2px 8px;
+        border-radius: 10px;
+        margin-top: 140px;
+        margin-left: 22px;
+        text-align: center;
+    }
+    .LixVideo #firstLixSpan::after{content: none;}
+    .LixVideo #firstLixSpan:hover{ left: 0; }
+}
+@media(max-width:500px)
+{
+    .LixVideo
+    {
+        width: 160px;
+        margin-left: 50px;
+    }
+    .LixVideo::before
+    {
+        content: '';
+        width: 148px;
+        height: 263px;
+        position: absolute;
+        left: 36px;
+        top: -45px;
+        background-repeat: no-repeat;
+        background: linear-gradient(238deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+        background-size: contain;
+        z-index: 3;
+        border-radius: 20px;
+        mix-blend-mode: color-burn;
+        opacity: 0.5;
+        transform: rotate( 270deg);
+    }
+    .LixVideo::after{
+        content: '';
+        width: 247px;
+        height: 318px;
+        left: 7px;
+        top: -117px;
+    }
+    .LixVideo > video
+    {
+        position: absolute;
+        top: -16px;
+        border-radius: 3.7rem;
+        left: -19px;
+        z-index: 1;
+        pointer-events: none;
+        width: 257px;
+    }
+    .LixVideo #firstLixSpan
+    {
+        margin-left: 0;
+        left: -20px;
+        width: 160%;
+    }
+    .LixVideo #firstLixSpan:hover{ left: -20px; }
+    .Lixinfo > h3 
+    {
+        margin-left: 38px;
+        left: 0;
+    }
+    .Lixinfo > div
+    {
+        margin-left: 31px;
+        margin-right: 60px;
+    }
+    .Lixinfo > p
+    {
+        margin-left: 200px;
+        margin-top: 198px;
+    }
+    .Lixinfo span{
+        margin-left: -81px;
+        margin-top: 22px;
+    }
 }
