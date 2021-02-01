@@ -1,0 +1,102 @@
+.PetVideo{
+    width: 233px;
+    height: 441px;
+    position: relative;
+    margin-left: 5%;
+}
+.PetVideo #firstPetSpan
+{
+    position: absolute;
+    color: whitesmoke;
+    left: 80px;
+    top: 110px;
+    width: 75%;
+    background-color: #5c85b6;
+    padding: 0.5rem; 
+    z-index:0;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: #e0e0e040 0px 2px 8px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.PetVideo #firstPetSpan:after
+{ 
+    content: "\025b6";
+    margin-left: 40px;
+    padding-top: 8px;
+    padding-left: 10px;
+    position: absolute;
+    width: 34px;
+    top: 0px;
+    height: 40px;
+    right: 0px;
+    background-color: #e0e0e0;
+    color:#141414;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.PetVideo #secondPetSpan:after
+{ 
+    content: "\025b6"; 
+    padding-left: 40px;
+}
+.PetVideo #firstPetSpan:hover{ left: 220px; }
+.PetVideo > video
+{
+    position: absolute;
+    left: 13px;
+    top: -9px;
+    border-radius: 3.7rem;
+    z-index: 1;
+}
+.PetVideo::before{
+    content: '';
+    width: 208px;
+    height: 360px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-repeat: no-repeat;
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: contain;
+    z-index: 3;
+    border-radius: 30px;
+    mix-blend-mode: hard-light;
+    opacity: 0.8;
+}
+.PetVideo::after{
+    content: '';
+    background-image: url(../images/featured/cel2.png);
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 4;
+    pointer-events: none;
+}
+.Petinfo
+{
+    width: 50%;
+    height: fit-content;
+    margin-left: 35px;
+    margin-top: 15px;
+}
+.Petinfo > h3{color: white;}
+.Petinfo > div
+{
+    color: #d5d5d5;
+    margin-top: 90px;
+}
+.Petinfo  span
+{
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    background-image: url(../images/featured/flutter.svg);
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-top: -5px;
+}

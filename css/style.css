@@ -355,37 +355,6 @@ body{
     font-weight: 600;
     color: white;
 }                          
-.Featured{
-    width: 233px;
-    height: 441px;
-    position: absolute;
-}
-.Featured::before{
-    content: '';
-    width: 208px;
-    height: 360px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    background-repeat: no-repeat;
-    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
-    background-size: contain;
-    z-index: 1;
-    border-radius: 30px;
-    mix-blend-mode: hard-light;
-    opacity: 0.8;
-}
-.Featured::after{
-    content: '';
-    background-image: url(../images/featured/cel2.png);
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    left: 0;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 2;
-}
 
 .Logo a{
     font-variant: small-caps;
