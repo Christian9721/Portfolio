@@ -56,6 +56,16 @@
 .aboutcontent p{
     margin-bottom: 0 !important;
 }
+.aboutcontent li
+{
+    margin: 0;
+    list-style: none;
+    background-image: url(../images/quantumchip.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+    padding-left: 30px;
+}
 .Info{
     position: relative;
     padding-left: 8px;

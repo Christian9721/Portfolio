@@ -58,7 +58,7 @@ function Download(evt)
         progressbar.classList.add('reversedownload');
         progressbar.classList.remove('downloadbar');
         window.open( 
-            '../css/CV.pdf','geeks', 
+            './css/CV.pdf','geeks', 
             'toolbars=0','width=300','height=300','left=200', 
             'top=200','scrollbars=1','resizable=1'); 
     }, 2000);
