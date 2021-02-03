@@ -61,8 +61,13 @@ function Download(evt)
             './css/CV.pdf','geeks', 
             'toolbars=0','width=300','height=300','left=200', 
             'top=200','scrollbars=1','resizable=1'); 
+            Toast.style.display = 'block';
     }, 2000);
 
+    setTimeout(function () 
+    {
+        Toast.style.display = "none";
+    },10000);
     //Movile orientation    
 }
 
@@ -258,4 +263,9 @@ function FillText(id)
         }
     });
 }
+var Toast = document.getElementById('Toast');
 
+function hide()
+{
+    Toast.style.display = 'none';
+}

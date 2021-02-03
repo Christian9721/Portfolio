@@ -65,6 +65,12 @@
     background-position: left center;
     background-size: 20px;
     padding-left: 30px;
+
+    animation-name: aboutanim;
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
 }
 .aboutcontent li strong
 {
@@ -115,4 +121,41 @@
 } 
 .Info:hover .Infotext {
     visibility: visible;
+}
+.ToastAnim
+{
+    position: fixed;
+    display: none;
+    left: 10px;
+    width: 100%;
+    z-index: 10;
+    animation-name: toastanim;
+    animation-duration: 1.5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+@keyframes toastanim 
+{
+    0% 
+    {
+      opacity: 0;
+      bottom: -50px;
+    }
+    100% 
+    {
+      opacity: 1;
+      bottom: 0;
+    }
+}
+@keyframes aboutanim
+{
+    0%{
+        margin: -40%;
+        opacity: 0;
+    }
+    100%{
+        margin: 0;
+        opacity: 1;
+    }
 }
