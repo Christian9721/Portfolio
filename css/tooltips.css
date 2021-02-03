@@ -66,6 +66,26 @@
     background-size: 20px;
     padding-left: 30px;
 }
+.aboutcontent li strong
+{
+    background: linear-gradient(145deg,#76D4F8 0%, #4178F0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    -webkit-text-stroke: transparent;
+    font-weight: 900;
+    font-family: system-ui;
+}
+.aboutcontent > p strong
+{
+    background: linear-gradient(145deg,#76D4F8 0%, #4178F0 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: system-ui;
+    -webkit-text-stroke: transparent;
+    font-weight: 900;
+}
 .Info{
     position: relative;
     padding-left: 8px;

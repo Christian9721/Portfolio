@@ -211,8 +211,15 @@ body{
 }
 
 .about .title h1{
-    font-size: 2.4em;
-    font-weight: 600;
+    font-size: 3.4em;
+    font-weight: bolder;
+    background: linear-gradient(145deg,#76D4F8 0%, #4178F0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    font-family: system-ui;
+
 }
 .aboutCard{
     margin-right: 15% !important;
@@ -277,7 +284,7 @@ body{
     justify-content: center;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
-    background-color: #f0f8ff36;
+    background-color: #e2e2e2;
 }
 .about .row .description h4{
     font-weight: 600;
@@ -351,9 +358,14 @@ body{
 }
 
 .services .title h2{
-    font-size: 2.3em;
     font-weight: 600;
-    color: white;
+    background: -webkit-linear-gradient(-70deg, #ff7170 0%, #ffe57f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    font-size: 4rem !important;
+    font-family: 'Elegancy';
 }                          
 
 .Logo a{

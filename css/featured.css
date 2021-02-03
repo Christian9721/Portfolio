@@ -13,7 +13,7 @@
     left: 80px;
     top: 110px;
     width: 75%;
-    background-color: #5c85b6;
+    background: -webkit-linear-gradient(  -70deg , #ff7170cf 0%, #ffe57fc2 100%);
     padding: 0.5rem; 
     z-index:0;
     cursor: pointer;
@@ -117,7 +117,7 @@
     left: 245px;
     top: 110px;
     width: 75%;
-    background-color: #5c85b6;
+    background: -webkit-linear-gradient(  -70deg , #ff7170cf 0%, #ffe57fc2 100%);
     padding: 0.5rem; 
     z-index:0;
     cursor: pointer;
@@ -280,7 +280,6 @@
         left: 0;
         top: 110px;
         width: 155%;
-        background-color: #5c85b6;
         padding: 0.1rem;
         z-index: 0;
         cursor: context-menu;
