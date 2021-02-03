@@ -58,19 +58,19 @@
 }
 .aboutcontent li
 {
-    margin: 0;
+    /*margin: 0;*/
     list-style: none;
     background-image: url(../images/quantumchip.svg);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px;
     padding-left: 30px;
-
-    animation-name: aboutanim;
+    /*margin: -40px;*/
+    /*animation-name: aboutanim;
     animation-duration: 2s; 
     animation-timing-function: ease-in-out; 
     animation-delay: 0s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 .aboutcontent li strong
 {

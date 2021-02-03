@@ -1,5 +1,37 @@
+
 $(document).ready(function () 
 {
+    $(window).scroll(function() {
+        var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+        $(".fade").each(function() 
+        {
+          /* Check the location of each desired element */
+          var objectBottom = $(this).offset().top;
+          
+          /* If the element is completely within bounds of the window, fade it in */
+          if (objectBottom < windowBottom) 
+          { //object comes into view (scrolling down)
+            if ($(this).css("opacity")==0) 
+            {
+                switch(this.id){
+                    case 'about':
+                        aboutAnim.restart();
+                        break;
+                    case 'projects':
+                        PetVideo.restart();
+                        LixVideo.restart();
+                        break;
+                }                              
+                $(this).fadeTo(500,1);                          
+            }
+          } 
+          else 
+          { //object goes out of view (scrolling up)
+            if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+          }
+        });
+      }).scroll();
+
     FillText("C#");
     $(window).scroll(function () {
         if(this.scrollY > 500){
@@ -269,3 +301,31 @@ function hide()
 {
     Toast.style.display = 'none';
 }
+var aboutTitle = anime({
+    targets: '.title',
+    opacity: [0,1],
+    duration:2000,
+    easing: 'easeOutSine',
+    autoplay: true
+});
+var aboutAnim = anime({
+    targets: '.aboutcontent li',
+    margin:[-40,0],
+    duration:2000,
+    easing: 'easeOutSine',
+    autoplay: true
+});
+var PetVideo = anime({
+    targets: '.PetVideo',
+    rotate:[450, 360],
+    duration:3000,
+    easing: 'easeOutElastic(1, .6)',
+    autoplay: true
+});
+var LixVideo = anime({
+    targets: '.LixVideo',
+    rotate:[450, 360],
+    duration:3000,
+    easing: 'easeOutElastic(1, .6)',
+    autoplay: true
+});

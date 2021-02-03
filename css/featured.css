@@ -5,6 +5,7 @@
     height: 441px;
     position: relative;
     margin-left: 5%;
+    transform-origin: top left 0;
 }
 .PetVideo #firstPetSpan
 {
@@ -44,7 +45,7 @@
     position: absolute;
     left: 13px;
     top: -9px;
-    border-radius: 3.7rem;
+    border-radius: 20%;
     z-index: 1;
     pointer-events: none;
 }
@@ -109,6 +110,7 @@
     height: 441px;
     position: relative;
     margin-left: 5%;
+    transform-origin: top left 0;
 }
 .LixVideo #firstLixSpan
 {

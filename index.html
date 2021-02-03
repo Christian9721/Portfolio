@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="javascript/vanilla-tilt.js"></script>
+    <script src="javascript/anime.min.js"></script>
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -155,13 +156,13 @@
         </div>
     </div>
     <!-- Home --> 
-    <div id="home" class="container-fluid home p-0">
+    <div id="home scene" class="container-fluid home p-0">
             <nav class="Logo navbar navbar-expand-md navbar-dark fixed-top px-5" style="z-index: 6;">
                 <a href="#" class="navbar-brand"><span class="kangi">烏</span>Portfolio</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsecontent" aria-controls="collapsecontent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsecontent">
+                <div data-depth="0.2" class="collapse navbar-collapse" id="collapsecontent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mr-3"><a href="#home" class="nav-link">Home</a></li>
                         <li class="nav-item mr-3"><a href="#about" class="nav-link">About</a></li>
@@ -187,7 +188,7 @@
             </div>
     </div>
     <!-- About--> 
-    <div id="about" class="container-fluid about">
+    <div id="about" class="fade container-fluid about">
         <div class="title">
             <h1>Who I am?</h1>
         </div>
@@ -224,7 +225,7 @@
         </div>
     </div>
      <!-- Projects-->     
-    <div id="projects" class="container-fluid services">
+    <div id="projects" class="fade container-fluid services">
         <div class="title">
             <h2>Featured Projects</h2>
         </div>
@@ -258,14 +259,14 @@
                 <p>powered by: <span></span></p>
                 <div>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam odit vitae, enim pariatur quis, quam harum, rerum quaerat dolor eaque officia facilis perspiciatis cum esse inventore neque voluptatum libero praesentium!
+                        Lixenium is an online multiplayer, play and destroy your enemies in a real time equalizer that adjusts to the music of each player. accumulate points, use power ups and chat !
                     </p>
                 </div>
             </div>       
         </div>
     </div>
                                             <!-- Skills --> 
-<div id="skills" class="container-fluid skills" style="
+<div id="skills" class="fade container-fluid skills" style="
                                                 padding-left: 0;
                                                 padding-right: 0px;
                                                 margin-right: auto;
@@ -475,7 +476,7 @@
     </div>
 </div>
     <!-- contact --> 
-    <div id="contact" class="container-fluid contact">
+    <div id="contact" class="fade container-fluid contact">
         <div class="title">
             <div class="title">
                 <h2>Contact me</h2>
