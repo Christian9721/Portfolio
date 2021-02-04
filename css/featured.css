@@ -110,6 +110,7 @@
     height: 441px;
     position: relative;
     margin-left: 5%;
+    margin-bottom: -90px;
     transform-origin: top left 0;
 }
 .LixVideo #firstLixSpan
@@ -373,7 +374,7 @@
 /*Lix*/
 @media(max-width:670px)
 {
-    
+    .LixVideo{margin-bottom: 0;}
     .Lixinfo{ display: contents; }
     .Lixinfo > h3
     {
@@ -497,7 +498,11 @@
     {
         position: absolute;
         margin-top: 205px;
-        margin-left: 220px;
+        margin-left: 265px;
+    }
+    .AmongInfo > p.span
+    {
+        margin-left: 10px;
     }
     .AmongInfo > div
     {
