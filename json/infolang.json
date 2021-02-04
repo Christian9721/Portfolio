@@ -141,14 +141,12 @@
         "projects":
         [
             {
-                "name":"",
-                "description":"",
-                "url":"",
+                "name":"Food Folks",
+                "description":"My team and I worked on this backend system for a website made with Vue & Vuetify",
+                "url":"https://github.com/Manuel098/restaurante-back",
                 "img":
                 [
-                    "",
-                    "",
-                    ""
+                    "./images/laravel/laravel.png"
                 ]
             }
         ]   

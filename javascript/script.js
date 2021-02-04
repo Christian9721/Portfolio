@@ -293,6 +293,10 @@ function FillText(id)
                 }             
             }
         }
+        else
+        {
+            document.getElementById('ProjectH3').innerHTML="";
+        }
     });
 }
 var Toast = document.getElementById('Toast');
