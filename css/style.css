@@ -594,6 +594,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    clip-path: ellipse(100% 55% at 52% 60%);
 }
 .contact .title{
     text-align: center;
@@ -603,6 +604,14 @@ body{
 .contact .title h2{
     font-size: 2.2em;
     font-weight: 600;
+    font-size: 3.4em;
+    font-weight: bolder;
+    background: -webkit-linear-gradient(  -70deg , #ff7170 0%, #ffe57f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    font-family: system-ui;
 }
                      
                                 /* contact row left column */
@@ -619,7 +628,7 @@ body{
     margin-bottom: 0.3em;
 }
 .contact .row .left-column .list-group-item:hover{
-    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: -webkit-linear-gradient( -70deg , #ff7170 0%, #ffe57f 100%); 
     color: white;
 }
 .contact .row .left-column .list-group-item span i{
@@ -656,11 +665,9 @@ body{
     }
 }
                                                     /* footer */
-.footer .list-group-item{
-    background-image: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);
-}
+
 .footer{
     width: 100%;
-    background-image: linear-gradient(94.23deg ,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);
+    background: -webkit-linear-gradient( -70deg  , #ff7170 0%, #ffe57f 100%);
     height: 5px;
 }

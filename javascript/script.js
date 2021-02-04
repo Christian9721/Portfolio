@@ -20,6 +20,7 @@ $(document).ready(function ()
                     case 'projects':
                         PetVideo.restart();
                         LixVideo.restart();
+                        AmongVideo.restart();
                         break;
                 }                              
                 $(this).fadeTo(500,1);                          
@@ -70,11 +71,6 @@ function Download(evt)
 
     var progressbar = document.getElementById("progressid");
     progressbar.classList.add('downloadbar');
-
-    //var percent = document.getElementById("percentage");
-    //var p_height = percent.offsetHeight;
-    
-    //percent.innerText=`${p_height}%`;
     
     setTimeout(function () 
     {       
@@ -314,7 +310,7 @@ var aboutTitle = anime({
 });
 var aboutAnim = anime({
     targets: '.aboutcontent li',
-    margin:[-40,0],
+    margin:[-120,0],
     duration:2000,
     easing: 'easeOutSine',
     autoplay: true
@@ -328,6 +324,13 @@ var PetVideo = anime({
 });
 var LixVideo = anime({
     targets: '.LixVideo',
+    rotate:[450, 360],
+    duration:3000,
+    easing: 'easeOutElastic(1, .6)',
+    autoplay: true
+});
+var AmongVideo = anime({
+    targets: '.AmongVideo',
     rotate:[450, 360],
     duration:3000,
     easing: 'easeOutElastic(1, .6)',

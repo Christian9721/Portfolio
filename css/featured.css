@@ -222,6 +222,125 @@
     background-size: contain;
     filter: invert(1);
 }
+/*AmongSpikes*/
+
+.AmongVideo{
+    width: 233px;
+    height: 441px;
+    position: relative;
+    margin-left: 5%;
+    transform-origin: top left 0;
+}
+.AmongVideo #firstAmongSpan
+{
+    position: absolute;
+    color: whitesmoke;
+    left: 245px;
+    top: 110px;
+    width: 75%;
+    background: -webkit-linear-gradient( 95deg ,#76d4f8,#3b94ffed);
+    padding: 0.5rem; 
+    z-index:0;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: #e0e0e040 0px 2px 8px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.AmongVideo #firstAmongSpan:after
+{ 
+    content: "\025b6";
+    margin-left: 40px;
+    padding-top: 8px;
+    padding-left: 10px;
+    position: absolute;
+    width: 34px;
+    top: 0px;
+    height: 40px;
+    right: 0px;
+    background-color: #e0e0e0;
+    color:#141414;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.AmongVideo #firstAmongSpan:hover{ left: 385px; }
+.AmongVideo > video
+{
+    position: absolute;
+    top: -12px;
+    border-radius: 3.7rem;
+    z-index: 1;
+    pointer-events: none;
+}
+.AmongVideo::before{
+    content: '';
+    width: 208px;
+    height: 355px;
+    position: absolute;
+    left: 96px;
+    top: -84px;
+    background-repeat: no-repeat;
+    background: linear-gradient(238deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: contain;
+    z-index: 3;
+    border-radius: 20px;
+    mix-blend-mode: hue;
+    opacity: 0.5;
+    transform: rotate( 270deg);
+}
+.AmongVideo::after{
+    content: '';
+    background-image: url(../images/featured/cel2.png);
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 112px;
+    top: -137px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 4;
+    pointer-events: none;
+    transform: rotate( 270deg);
+}
+.AmongInfo
+{
+    width: 50%;
+    height: fit-content;
+    margin-left: 35px;
+    margin-top: 15px;
+}
+.AmongInfo > h3
+{
+    color: white;
+    margin-left: 160px;
+}
+.AmongInfo > div
+{
+    color: #d5d5d5;
+    margin-top: 140px;
+    position: relative;
+    left: -243px;
+    width: 100%;
+    text-align: justify;
+}
+.AmongInfo > p{
+    color: #a8a8a8; 
+    margin-top: 10px;
+    position: relative;
+    margin-left: 160px;
+}
+.AmongInfo  span
+{
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    background-image: url(../images/featured/unity.svg);
+    background-repeat: no-repeat;
+    margin-left: 17px;
+    margin-top: 0px;
+    background-size: contain;
+    filter: invert(1);
+}
 /*Pet*/
 @media(max-width:628px)
 {
@@ -359,6 +478,118 @@
         margin-top: 198px;
     }
     .Lixinfo span{
+        margin-left: -81px;
+        margin-top: 22px;
+    }
+}
+/*Among*/
+@media(max-width:670px)
+{
+    
+    .AmongInfo{ display: contents; }
+    .AmongInfo > h3
+    {
+        position: absolute;
+        margin-top: 200px;
+        left: -100px;
+    }
+    .AmongInfo > p
+    {
+        position: absolute;
+        margin-top: 205px;
+        margin-left: 220px;
+    }
+    .AmongInfo > div
+    {
+        margin-top: -130px;
+        position: relative;
+        margin-left: 45px;
+        margin-right: 145px;
+        left: 0;
+    }
+    .AmongVideo #firstAmongSpan{
+        position: absolute;
+        color: whitesmoke;
+        left: 0;
+        top: 110px;
+        width: 155%;
+        padding: 0.1rem;
+        z-index: 0;
+        cursor: context-menu;
+        transition: 0.5s;
+        box-shadow: #e0e0e040 0px 2px 8px;
+        border-radius: 10px;
+        margin-top: 140px;
+        margin-left: 22px;
+        text-align: center;
+    }
+    .AmongVideo #firstAmongSpan::after{content: none;}
+    .AmongVideo #firstAmongSpan:hover{ left: 0; }
+}
+@media(max-width:500px)
+{
+    .AmongVideo
+    {
+        width: 160px;
+        margin-left: 50px;
+    }
+    .AmongVideo::before
+    {
+        content: '';
+        width: 148px;
+        height: 263px;
+        position: absolute;
+        left: 36px;
+        top: -45px;
+        background-repeat: no-repeat;
+        background: linear-gradient(238deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+        background-size: contain;
+        z-index: 3;
+        border-radius: 20px;
+        mix-blend-mode: color-burn;
+        opacity: 0.5;
+        transform: rotate( 270deg);
+    }
+    .AmongVideo::after{
+        content: '';
+        width: 247px;
+        height: 318px;
+        left: 7px;
+        top: -117px;
+    }
+    .AmongVideo > video
+    {
+        position: absolute;
+        top: -16px;
+        border-radius: 3.7rem;
+        left: -19px;
+        z-index: 1;
+        pointer-events: none;
+        width: 257px;
+    }
+    .AmongVideo #firstAmongSpan
+    {
+        margin-left: 0;
+        left: -20px;
+        width: 160%;
+    }
+    .AmongVideo #firstAmongSpan:hover{ left: -20px; }
+    .AmongInfo > h3 
+    {
+        margin-left: 38px;
+        left: 0;
+    }
+    .AmongInfo > div
+    {
+        margin-left: 31px;
+        margin-right: 60px;
+    }
+    .AmongInfo > p
+    {
+        margin-left: 200px;
+        margin-top: 198px;
+    }
+    .AmongInfo span{
         margin-left: -81px;
         margin-top: 22px;
     }
