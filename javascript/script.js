@@ -336,3 +336,36 @@ var AmongVideo = anime({
     easing: 'easeOutElastic(1, .6)',
     autoplay: true
 });
+var FilterOne = anime({
+    targets: '#filter_one',
+    dx: ["1","-1"],
+    duration: 1000,
+    loop: true,
+    direction: "alternate",
+    easing: "linear"
+  });
+  var FilterTwo = anime({
+    targets: '#filter_two',
+    dx: ["-1","1"],
+    duration: 1000,
+    loop: true,
+    direction: "alternate",
+    easing: "linear"
+  });
+
+  function testVideo(e, id)
+  {
+      e.preventDefault();
+      e.currentTarget.setAttribute("style","display: none");
+
+      var video = document.getElementById(id);
+
+      
+      video.paused ? video.play() : video.pause();
+  }
+
+  /*$('.videoTarget').click(function()
+  {
+      this.paused?this.play():this.pause();
+
+  });*/

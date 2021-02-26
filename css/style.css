@@ -138,7 +138,16 @@ body{
     text-shadow: white;
     transition: 1s;
 }
-
+.chromatic-aberration {
+    -webkit-filter: url(#kill);
+    
+}
+.chromatic-aberration-no-anim{
+    -webkit-filter: url(#kill);
+}
+.scale{
+    transform: scale(1.05);
+}
 .Card:hover{
    /* text-shadow: 0 0 0px #fff, 0 0 10px #ffffff, 0 0 20px #ff0083, 0 0 40px #ff0030, 0 0 80px #ff00f8, 0 0 90px #ff0048, 0 0 100px #e0f, 0 0 150px #ff0025;*/
    background: linear-gradient(94.23deg,#819aff 12.41%,#ffb9a9 52.55%,#ff9494 89.95%);   
@@ -237,9 +246,6 @@ body{
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     border: none !important;
-
-    -webkit-animation: filter-animation 8s infinite;
-    animation: filter-animation 8s infinite;
 }
 @media (max-width: 767px){
     .photo {
@@ -253,33 +259,7 @@ body{
         margin-right: auto !important;
     }    
 }
-@-webkit-keyframes filter-animation {
-    0% {
-      -webkit-filter: hue-rotate(0deg);
-    }
-    
-    50% {
-      -webkit-filter: hue-rotate(100deg);
-    }
-    
-    100% {
-      -webkit-filter: hue-rotate(0deg);
-    }
-  }
-  
-  @keyframes filter-animation {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-    
-    50% {
-      filter: hue-rotate(100deg);
-    }
-    
-    100% {
-      filter: hue-rotate(0deg);
-    }
-  }
+
 .about .row .description{
     display: flex;
     flex-direction: column;
