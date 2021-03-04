@@ -350,7 +350,11 @@ body{
     font-size: 4rem !important;
     font-family: 'Elegancy';
 }                          
-
+.Subtitle{
+    text-align: justify;
+    margin: 55px;
+    font-size: calc(20px + 6 * ((100vw - 320px) / 680)) !important;
+}
 .Logo a{
     font-variant: small-caps;
 } 
