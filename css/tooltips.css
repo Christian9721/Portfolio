@@ -82,6 +82,7 @@
     -webkit-text-stroke: transparent;
     font-weight: 900;
     font-family: system-ui;
+    cursor: pointer;
 }
 .aboutcontent > p strong
 {
