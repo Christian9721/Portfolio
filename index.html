@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/featured.css">
     <link rel="stylesheet" href="css/buttonstyle.css">
+    <link rel="stylesheet" href="css/cat.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -38,6 +39,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="javascript/vanilla-tilt.js"></script>
     <script src="javascript/anime.min.js"></script>
+    <script src="javascript/TweenMax.min.js"></script>
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -225,6 +227,68 @@
                 </div>
             </div>        
         </div>
+        <main role="main" class="main-content" id="main-content">          
+            <div class="catbox" id="main-line">
+                <div style="height: -webkit-fill-available; position:absolute"> 
+                    <div>
+                        <img class="live"  src="./images/cat/Live.png" id="live"/>
+                        <div  class="liveafter"></div>
+                    </div>
+                    <img class="dead"  src="./images/cat/Dead.png" id="dead"/>
+                </div>      
+                <div class="atom atom-before" id="atom" onmouseover="OnMeasurement()" onmouseout="OnLeaveMeasurement()" >
+                    <div>
+                        <div></div>
+                      </div>
+                      <div>
+                        <div></div>
+                      </div>
+                      <div>
+                        <div></div>
+                      </div>
+                      <div>
+                        <div></div>
+                      </div> 
+                </div>
+                <div>
+                    <img class="top" src="./images/cat/box_top.png" />
+                    <img class="bottom" src="./images/cat/box_bottom.png" />
+                    <img class="middle" src="./images/cat/box_front.png"/> 
+                </div>                            
+            </div>
+            <div  style="position: relative; display: contents;">
+                <!-- <img src="./images/cat/channel.png" class="mayenlogo"/> -->
+                <div class="infochannel">
+                    <h4>Quantum computing <a href="https://www.youtube.com/c/MayenStudios" class="btn btn-dark">TUTORIALS</a></h4>
+                </div>
+            </div>
+            
+            <canvas id="noise" class="noise" style="pointer-events: none;"></canvas>
+          <div class="vignette" style="pointer-events: none;"></div>
+        </main>
+        <div>
+         <!--   <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#141414" fill-opacity="1" d="M0,96L120,85.3C240,75,480,53,720,48C960,43,1200,53,1320,58.7L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+                </svg>
+            </div>
+            -->
+            <div style="position: relative; top: -80px; pointer-events: none;">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="#141414" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="#141414c9" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="#1414148c" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff0" />
+                </g>
+                </svg>
+            </div>
+        </div>
+        
     </div>
                                             <!-- Skills --> 
 <div id="skills" class="fade container-fluid skills" style="

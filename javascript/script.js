@@ -364,22 +364,138 @@ var FilterOne = anime({
       video.paused ? video.play() : video.pause();
   }
 
- /* (function() {
-    // Add event listener
-    document.addEventListener("mousemove", parallax);
-    const elem = document.querySelector("#home scene");
-    // Magic happens here
-    function parallax(e) {
-        let _w = window.innerWidth/2;
-        let _h = window.innerHeight/2;
-        let _mouseX = e.clientX;
-        let _mouseY = e.clientY;
-        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
-        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
-        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
-        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-        console.log(x);
-        elem.style.backgroundPosition = x;
-    }
+  const noise = () => {
+    let canvas, ctx;
 
-})();*/
+    let wWidth, wHeight;
+
+    let noiseData = [];
+    let frame = 0;
+
+    let loopTimeout;
+
+
+    // Create Noise
+    const createNoise = () => {
+        const idata = ctx.createImageData(wWidth, wHeight);
+        const buffer32 = new Uint32Array(idata.data.buffer);
+        const len = buffer32.length;
+
+        for (let i = 0; i < len; i++) {
+            if (Math.random() < 0.5) {
+                buffer32[i] = 0xff000000;
+            }
+        }
+
+        noiseData.push(idata);
+    };
+
+
+    // Play Noise
+    const paintNoise = () => {
+        if (frame === 9) {
+            frame = 0;
+        } else {
+            frame++;
+        }
+
+        ctx.putImageData(noiseData[frame], 0, 0);
+    };
+
+
+    // Loop
+    const loop = () => {
+        paintNoise(frame);
+
+        loopTimeout = window.setTimeout(() => {
+            window.requestAnimationFrame(loop);
+        }, (1000 / 25));
+    };
+
+
+    // Setup
+    const setup = () => {
+        wWidth = window.innerWidth;
+        wHeight = window.innerHeight;
+
+        canvas.width = wWidth;
+        canvas.height = wHeight;
+
+        for (let i = 0; i < 10; i++) {
+            createNoise();
+        }
+
+        loop();
+    };
+
+
+    // Reset
+    let resizeThrottle;
+    const reset = () => {
+        window.addEventListener('resize', () => {
+           /* window.clearTimeout(resizeThrottle);*/
+
+            resizeThrottle = window.setTimeout(() => {
+                window.clearTimeout(loopTimeout);
+                setup();
+            }, 200);
+        }, false);
+    };
+
+
+    // Init
+    const init = (() => {
+        canvas = document.getElementById('noise');
+        ctx = canvas.getContext('2d');
+
+        setup();
+    })();
+};
+
+noise();
+
+
+/*LINE*/
+
+var Pic = document.getElementById('main-line').cloneNode();
+//document.getElementById('main-content').appendChild(Pic);
+var line = document.createElement('div'); line.className = 'line';
+document.getElementById('main-content').appendChild(line);  
+
+
+var tl = new TimelineMax({repeat:-1});
+
+for(var i=50; i--;){
+  tl.to(Pic,R(0.03,0.17),{opacity:R(0,1),y:R(-1.5,1.5)})
+};
+
+tl.to(line,tl.duration()/2,{opacity:R(0.1,1),x:R(0,300),ease:RoughEase.ease.config({strength:0.5,points:10,randomize:true,taper: "none"}),repeat:1,yoyo:true},0);
+
+function R(max,min){return Math.random()*(max-min)+min};
+
+/*CAT EVENTS*/
+var live = document.getElementById('live');
+var dead = document.getElementById('dead');
+var atom = document.getElementById('atom');
+
+function OnMeasurement(){
+    
+    var rand = Math.floor(Math.random()*2);
+    if(rand===1){
+        live.setAttribute('style','opacity:0');
+        dead.setAttribute('style','opacity:1');
+    }
+    else{
+        dead.setAttribute('style','opacity:0');
+        live.setAttribute('style','opacity:1');
+    }
+    atom.classList.remove('atom-before');
+    atom.classList.add('atom-after');
+    console.log();
+}
+function OnLeaveMeasurement(){
+    live.setAttribute('style','opacity:1');
+    dead.setAttribute('style','opacity:1');
+    atom.classList.add('atom-before');
+    atom.classList.remove('atom-after');
+}

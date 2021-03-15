@@ -64,6 +64,7 @@ video{outline: 0px;}
     mix-blend-mode: hard-light;
     pointer-events: none;
     opacity: 0.4;
+    box-shadow: 0 0 38px rgba(0, 195, 255, 0.5);
 }
 .PetVideo::after{
     content: '';
@@ -170,6 +171,7 @@ video{outline: 0px;}
     pointer-events: none;
     opacity: 0.5;
     transform: rotate( 270deg);
+    box-shadow: 0 0 38px rgb(255 0 164 / 50%);
 }
 .LixVideo::after{
     content: '';
@@ -289,6 +291,7 @@ video{outline: 0px;}
     opacity: 0.5;
     pointer-events: none;
     transform: rotate( 270deg);
+    box-shadow: 0 0 38px rgba(255, 255, 255, 0.5);
 }
 .AmongVideo::after{
     content: '';
