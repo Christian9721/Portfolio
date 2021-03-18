@@ -1,6 +1,17 @@
 
 $(document).ready(function () 
 {
+    FillText("C#");
+
+    if(isMobile())
+    { 
+        $(".fade").each(function() 
+        {
+            $(this).css('opacity','1');
+        });
+        return;
+    }
+
     $(window).scroll(function() {
         var windowBottom = $(this).scrollTop() + $(this).innerHeight();
         $(".fade").each(function() 
@@ -33,7 +44,7 @@ $(document).ready(function ()
         });
       }).scroll();
 
-    FillText("C#");
+    
     $(window).scroll(function () {
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
@@ -99,6 +110,7 @@ function Download(evt)
     //Movile orientation    
 }
 
+/*
 window.addEventListener("deviceorientation", handleOrientation, true);
 
 function handleOrientation(event) {
@@ -107,9 +119,7 @@ function handleOrientation(event) {
     var x   = event.beta;
     var y   = event.gamma;
     
-    // Do stuff with the new orientation data
-    //console.log(absolute);
-}
+}*/
 
 /*
 Making the init of fields
@@ -452,26 +462,28 @@ var FilterOne = anime({
     })();
 };
 
-noise();
+if(!isMobile()){
+    noise();
+
+    var Pic = document.getElementById('main-line').cloneNode();
+    //document.getElementById('main-content').appendChild(Pic);
+    var line = document.createElement('div'); line.className = 'line';
+    document.getElementById('main-content').appendChild(line);  
+
+
+    var tl = new TimelineMax({repeat:-1});
+
+    for(var i=50; i--;){
+    tl.to(Pic,R(0.03,0.17),{opacity:R(0,1),y:R(-1.5,1.5)})
+    };
+
+    tl.to(line,tl.duration()/2,{opacity:R(0.1,1),x:R(0,300),ease:RoughEase.ease.config({strength:0.5,points:10,randomize:true,taper: "none"}),repeat:1,yoyo:true},0);
+
+    function R(max,min){return Math.random()*(max-min)+min};
+}
 
 
 /*LINE*/
-
-var Pic = document.getElementById('main-line').cloneNode();
-//document.getElementById('main-content').appendChild(Pic);
-var line = document.createElement('div'); line.className = 'line';
-document.getElementById('main-content').appendChild(line);  
-
-
-var tl = new TimelineMax({repeat:-1});
-
-for(var i=50; i--;){
-  tl.to(Pic,R(0.03,0.17),{opacity:R(0,1),y:R(-1.5,1.5)})
-};
-
-tl.to(line,tl.duration()/2,{opacity:R(0.1,1),x:R(0,300),ease:RoughEase.ease.config({strength:0.5,points:10,randomize:true,taper: "none"}),repeat:1,yoyo:true},0);
-
-function R(max,min){return Math.random()*(max-min)+min};
 
 /*CAT EVENTS*/
 var live = document.getElementById('live');
@@ -499,3 +511,53 @@ function OnLeaveMeasurement(){
     atom.classList.add('atom-before');
     atom.classList.remove('atom-after');
 }
+
+function isMobile() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+}
+
+
+var advice_atom = document.getElementById("advice-atom-msg");
+advice_atom.innerHTML = `${isMobile()? 'Click On The Atom': 'Hover On The Atom'}`;
+
+/*
+function getCenter(element) {
+    const {left, top, width, height} = element.getBoundingClientRect();
+    return {x: left + width / 2, y: top + height / 2}
+}
+
+
+
+const arrow = document.querySelector("#arrow-atom");
+var atompos = document.getElementById("atom");
+var rect = atompos.getBoundingClientRect();
+console.log(rect.top, rect.right, rect.bottom, rect.left);
+
+const arrowCenter = getCenter(arrow);
+const angle = Math.atan2(rect.top,rect.right);
+arrow.style.transform = `rotate(${angle}rad)`;
+*/
+
+$("#js-rotating").Morphext({
+    // The [in] animation type. Refer to Animate.css for a list of available animations.
+    animation: "fadeIn",
+    // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+    separator: ",",
+    // The delay between the changing of each phrase in milliseconds.
+    speed: 3000,
+    complete: function () {
+        // Called after the entrance animation is executed.
+    }
+});

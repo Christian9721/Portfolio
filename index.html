@@ -40,6 +40,7 @@
     <script src="javascript/vanilla-tilt.js"></script>
     <script src="javascript/anime.min.js"></script>
     <script src="javascript/TweenMax.min.js"></script>
+    <script src="javascript/morphext.min.js"></script>
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -120,10 +121,10 @@
             </div>
             <div class="col-md-8 description">
                 <div class="aboutcontent">                  
-                    <strong>Strongs:</strong>
                     <ul>
                         <li><strong>SOLID</strong> principles.</li>
-                        <li>Hight <strong>OOP</strong> Knowledge.</li>
+                        <li><strong>API REST</strong> Knowledge.</li>
+                        <li>Hight <strong>OOP</strong> Knowledge.</li>     
                         <li>Experience using <strong>REGEX</strong></li>
                         <li><strong>DESIGN PATTERNS</strong> knowledge.</li>
                         <li><strong>MULTI-THREADING</strong> Knowledge.</li>
@@ -225,9 +226,18 @@
                     <a href="https://play.google.com/store/apps/details?id=mayenstudios.amongspikes&hl=es&gl=US" class="btn" style="    
                     background: -webkit-linear-gradient(95deg,#76d4f8,#3b94ffed); color: white; font-weight: bold;">See more</a>
                 </div>
-            </div>        
+            </div>                   
         </div>
+        <hr style="background-color: currentColor; margin-top: 15px;">
+        <div class="row px-2 mb-2" style="color: white;">
+            <h3>COMING SOON</h3>
+        </div>
+        
+       <!-- <div id="arrow-atom" class="the-arrow"></div> -->
         <main role="main" class="main-content" id="main-content">          
+            <div class="advice-atom"> 
+                <p id="advice-atom-msg">Hover On The Atom</p>                         
+            </div>
             <div class="catbox" id="main-line">
                 <div style="height: -webkit-fill-available; position:absolute"> 
                     <div>
@@ -259,7 +269,7 @@
             <div  style="position: relative; display: contents;">
                 <!-- <img src="./images/cat/channel.png" class="mayenlogo"/> -->
                 <div class="infochannel">
-                    <h4>Quantum computing <a href="https://www.youtube.com/c/MayenStudios" class="btn btn-dark">TUTORIALS</a></h4>
+                    <h4><span id="js-rotating">Quantum computing,UX,UI,Videogames,Mobile Apps, IA </span><a href="https://www.youtube.com/c/MayenStudios" class="btn btn-dark">TUTORIALS</a></h4>
                 </div>
             </div>
             
@@ -267,12 +277,6 @@
           <div class="vignette" style="pointer-events: none;"></div>
         </main>
         <div>
-         <!--   <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#141414" fill-opacity="1" d="M0,96L120,85.3C240,75,480,53,720,48C960,43,1200,53,1320,58.7L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
-                </svg>
-            </div>
-            -->
             <div style="position: relative; top: -80px; pointer-events: none;">
                 <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -280,9 +284,12 @@
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 </defs>
                 <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#141414" />
+                <!--<use xlink:href="#gentle-wave" x="48" y="5" fill="#1414144a" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="#14141485" />-->
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="#141414" /> 
                 <use xlink:href="#gentle-wave" x="48" y="3" fill="#141414c9" />
                 <use xlink:href="#gentle-wave" x="48" y="5" fill="#1414148c" />
+                
                 <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff0" />
                 </g>
                 </svg>

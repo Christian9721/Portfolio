@@ -1,13 +1,44 @@
 /*CAT*/
+.advice-atom{
+     margin: 20px 0 15px 5px;
+    color: whitesmoke;
+    letter-spacing: 3px;
+    font-variant: petite-caps;
+    background: #141414;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    align-self: flex-start;
+}
+.the-arrow{
+  width: 220px;
+  position: relative;
+  top: 46px;
+  left: 180px;
+  height: 1px;
+  background-color: white;
+  z-index: 40;
+  mix-blend-mode: difference;
+}
+.the-arrow::after{
+  content: '➤';
+  color: white;
+  position: absolute;
+  right: -3px;
+  top: -11px;
+  z-index: 10;
+}
+.advice-atom p{margin: 0;}
 .catbox{
   position: relative; 
   transform: scale(1.5); 
   margin-top: 40px;
   margin-bottom: 30px;
 }
-.catbox:hover{
+/*.catbox:hover{
   cursor: url("../images/cat/measure.svg ") 16 16 ,auto;
-}
+}*/
 .top{
     position: relative;
     width: 100px;
@@ -55,6 +86,7 @@
     left: -20px;
     top: -20px;
   animation: animatedBackground 60s linear infinite forwards;
+  opacity: 0.9;
   pointer-events: none;
 }
 @keyframes animatedBackground {
