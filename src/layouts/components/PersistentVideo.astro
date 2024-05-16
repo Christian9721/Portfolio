@@ -1,0 +1,24 @@
+---
+
+---
+<script>
+import { isTransitionBeforeSwapEvent, TRANSITION_BEFORE_SWAP } from "astro:transitions/client";
+
+document.addEventListener(TRANSITION_BEFORE_SWAP, (e) => {
+    if (isTransitionBeforeSwapEvent(e)) {
+
+        const data = JSON.parse(localStorage.getItem("currentVid") || '{}');
+    
+        if(!data) return;
+
+        const { name } = data;
+
+        if (e.to.pathname === "/en/" || e.to.pathname === "/es/" || e.to.pathname === "/jp/") {
+            (e.newDocument.querySelector("#videoPlaceholder") as HTMLElement).dataset.astroTransitionPersist = name;
+        } else {
+            const element = e.newDocument.querySelector("#videoPlaceholder");
+            element?.remove();
+        }
+    }
+});
+</script>

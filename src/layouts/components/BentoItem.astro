@@ -1,0 +1,43 @@
+---
+interface Props {
+    classname?: string;
+    title: string | null;
+    subtitle?: string;
+    href: string;
+}
+    const { title, subtitle, classname, href } = Astro.props as Props;;
+---
+<a href={href} class={`${classname}
+min-h-32
+relative rounded-md
+backdrop-blur-md
+border border-black/10
+shadow-inner shadow-white/10
+overflow-hidden border-neutral-500 pointer
+group`}>
+        <!-- Añadir un fondo negro -->
+        <div
+            class="absolute bottom-0 top-0 z-10 h-full w-full
+            bg-gradient-to-b from-transparent from-40% via-[#151836]/50 to-[#151836]/90 pointer-events-none"
+        >
+      </div>
+      <slot name="image" />
+      <slot name="video" />
+      <div
+        class="absolute z-20 top-0 flex w-full h-full pointer-events-none select-none flex-col justify-end gap-1 p-2 text-lg"
+      >
+        <h2 class="mb-0 text-balance text-2xl font-semibold uppercase text-white">
+          {title}
+        </h2>
+    
+        {
+          subtitle && (
+            <h3 class="-mt-4 mb-4 text-3xl font-semibold text-sky-200/80">
+              {subtitle}
+            </h3>
+          )
+        }
+    
+        <slot name="content" />
+      </div>
+    </a>

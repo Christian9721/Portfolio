@@ -1,0 +1,27 @@
+---
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { humanize } from "@/lib/utils/textConverter";
+import { TRANSITIONS } from "../../constants/transitionIds";
+import { Image } from "astro:assets";
+
+const { url, title = "", id = "" }: { url: ImageMetadata, title?: string, id?: string } = Astro.props;
+console.log(`id: ${TRANSITIONS.PROJECT_IMG}${id}`);
+---
+
+<section>
+  <div class="container text-center">
+    <div
+    class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-body to-theme-light px-8 py-14 dark:from-darkmode-body dark:to-darkmode-theme-light"
+    >
+      <Image 
+        alt={`${TRANSITIONS.PROJECT_IMG}${id}`} 
+        class="blur-sm mix-blend-darken dark:mix-blend-screen opacity-25 h-full rounded-2xl absolute top-0 left-0 object-cover w-full"
+        src={url}
+        /*data-transition-name={`${TRANSITIONS.PROJECT_IMG}-${id}`} 
+        /transition:name={`${TRANSITIONS.PROJECT_IMG}-${id}`}*/
+      />
+      <h1 set:text={humanize(title)} />
+      <Breadcrumbs className="mt-6" />
+    </div>
+  </div>
+</section>

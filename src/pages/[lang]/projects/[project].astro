@@ -1,0 +1,233 @@
+---
+//export const prerender = true;
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { getTaxonomy } from "@/lib/taxonomyParser.astro";
+import PageHeader from "@/partials/PageHeader.astro";
+import languagesAllowed from '@/constants/languages.constant';
+
+import { projectCompanyCards as ENCompanyProjects, projectPersonal as ENProjectPersonal } from '@/config/language/english';
+import { projectCompanyCards  as ESCompanyProjects, projectPersonal as ESProjectPersonal } from '@/config/language/spanish';
+import { projectCompanyCards as JPCompanyProjects, projectPersonal as JPProjectPersonal } from '@/config/language/japanese';
+import type { IProjectCard } from "@/interfaces/project.interface";
+import { Image } from "astro:assets";
+import PersistentVideo from "@/components/PersistentVideo.astro";
+
+export async function getStaticPaths() {
+  const projects = await getTaxonomy(config.settings.blog_folder, "projects");
+  interface IProject {
+    lang: string;
+    project: string;
+  }
+  const collection:IProject[] = [];
+  projects.forEach(project => (
+    languagesAllowed.forEach(lang => {
+      collection.push({lang, project})
+    })
+  ));
+
+  return collection.map(({project, lang }) => {
+    return {
+      params: {
+        lang: lang,
+        project 
+      },
+    };
+  });
+}
+
+const { project, lang } = Astro.params;
+
+let projectCompany: IProjectCard[];
+let projectPersonal: IProjectCard[];
+
+switch(lang) {
+  case "en": {
+    projectCompany = ENCompanyProjects;
+    projectPersonal = ENProjectPersonal;
+    break;
+  }
+  case "es": {
+    projectCompany = ESCompanyProjects;
+    projectPersonal = ESProjectPersonal;
+    break;
+  }
+  case "jp": {
+    projectCompany = JPCompanyProjects;
+    projectPersonal = JPProjectPersonal;
+    break;
+  }
+  default: {
+    projectCompany = ENCompanyProjects;
+    projectPersonal = ENProjectPersonal;
+    break;
+  }
+}
+
+const projectData = projectCompany.find(i => i.keyId === project) || projectPersonal.find(i => i.keyId === project) as IProjectCard;
+
+//console.log('projectData: ', projectData);
+---
+
+<Base title={projectData?.title || ''} lang={lang}>
+  <PersistentVideo />
+  <PageHeader title={projectData?.title || ''} id={projectData?.keyId} url={projectData?.srcImg}/>
+    <div id="my-modal" class="modal-root" data-attr-id={projectData?.keyId} data-attr-desc={projectData?.description}>
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+      <!-- Modal Content (The Image) -->
+      <img class="modal-img-content" id="img-src" src="" alt=""/>
+    </div>
+  </div>
+  <div class="section-sm pb-0">
+    <div class="container my-8">
+      {
+        projectData.video && projectData.keyId !== 'petfinder' && 
+        (
+            <video id="video-player" class="rounded-sm m-auto" transition:persist={`${projectData?.keyId}`} playsinline controls preload="none" class="w-full min-h-16" loop poster={projectData.srcImg.src} >
+                <source src={projectData.video} type="video/mp4">
+            </video>
+        )
+      }
+      <p class="my-8">{projectData?.description}</p>
+      <div id="img-container" class=" flex row gap-8 flex-wrap justify-center">
+        {
+          projectData?.otherImgs?.map((el, idx) => (
+            <div id={`image-${idx}`} data-src={el.src} class="border-dashed border-2 border-neutral-400 dark:border-neutral-600 p-4 rounded-md shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] hover:opacity-75 hover:scale-110 duration-100 cursor-pointer min-w-[15rem] w-auto max-w-[20rem]">
+              <Image
+                  src={el}
+                  alt={`${projectData.keyId}-${idx}`}
+                  loading="eager"
+                  class="object-cover rounded-md p-0 h-full"
+              />
+            </div>
+          ))
+        }
+      </div>
+      <p class="my-8">{projectData?.technicalDescription}</p>
+  </div>
+</Base>
+
+<style>
+  .modal-root {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    z-index: 100;
+  }
+
+  /* Modal Content (Image) */
+  .modal-img-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    padding: 0;
+    top: 30%;
+    position: relative;
+  }
+
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    /*padding: 10px 0;*/
+    height: 150px;
+  }
+
+  /* Add Animation - Zoom in the Modal */
+  .modal-img-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-img-content {
+      width: 100%;
+    }
+  }
+</style>
+<script>
+  function initVideo(element: HTMLElement) {
+    const isVideoPlaying = (video: HTMLVideoElement) => video.currentTime > 0 && !video.ended;
+    const video = document.getElementById("video-player") as HTMLVideoElement;
+
+    if (!video) return;
+
+    video.addEventListener('play', function() {
+      const attribute = element.getAttribute("data-attr-id");
+      const desc = element.getAttribute("data-attr-desc");
+      const item = {name: attribute, details: desc };
+
+      localStorage.setItem('currentVid', JSON.stringify(item));
+    });
+  }
+  function init() {
+    //Get the modal
+    const modal = document.getElementById("my-modal");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    const ImgContainer = document.getElementById("img-container");
+    const modalImg = document.getElementById("img-src");
+
+    if (!modal || !ImgContainer || !modalImg) return;
+  
+    const images = ImgContainer.children;
+    initVideo(modal);
+    
+    for (let i = 0; i<images.length; i++) {
+      const img = images[i];
+      img.addEventListener('click', (e) => {
+        const src = img.getAttribute('data-src') as string;
+        const alt = img.getAttribute('alt') as string;
+        modal.style.display = "block";
+        modalImg.setAttribute('src', src);
+        modalImg.setAttribute('alt', alt);
+      }) 
+    }
+    const span = document.getElementsByClassName("close")[0];
+    span.addEventListener('click', () => {
+      modal.style.display = "none";
+    });
+    modal.addEventListener('click', () => {
+      modal.style.display = "none";
+    });
+  }
+
+  init();
+  document.addEventListener("astro:after-swap", init)
+
+</script>

@@ -1,0 +1,24 @@
+{
+  "main": [
+    {
+      "name": "github",
+      "icon": "FaGithub",
+      "link": "https://github.com/Christian9721"
+    },
+    {
+      "name": "linkedin",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/in/christian-avila-9a83691aa/"
+    },
+    {
+      "name": "instagram",
+      "icon": "FaInstagram",
+      "link": "https://www.instagram.com/mayenstudios/"
+    },
+    {
+      "name": "gmail",
+      "icon": "FaGoogle",
+      "link": "mailto:christian.avila9721@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+---
+import type { IProjectCard } from "@/interfaces/project.interface";
+import BentoItem from "./BentoItem.astro";
+
+interface Props {
+    data: IProjectCard[];
+}
+
+const { data } = Astro.props as Props;
+const { pathname } = Astro.url;
+
+const classes = [
+    "xl:col-span-5 xl:row-span-1 lg:col-span-4 lg:row-span-2 md:row-span-1 md:col-span-2 sm:col-span-4 col-span-8",
+    "xl:col-span-3 xl:col-start-6 xl:row-span-3 lg:col-span-4 lg:row-span-2 md:row-span-1 md:col-span-2 sm:col-span-4 col-span-8",
+    "xl:col-span-5 xl:row-start-2 xl:row-span-1 lg:col-span-4 lg:row-span-2 md:row-span-1 md:col-span-2 sm:col-span-4 col-span-8",
+    "xl:col-span-5 xl:row-start-3 xl:row-span-1 lg:col-span-4 lg:row-span-2 md:row-span-1 md:col-span-2 sm:col-span-4 col-span-8",
+]
+---
+
+<section class={`w-full h-full grid grid-cols-8 xl:grid-rows-3 lg:grid-rows-4 md:grid-rows-1 sm:grid-rows-2 grid-rows-4 mx-auto px-0 py-6 lg:px-6 lg:py-6 gap-4`}>
+    {
+        data.map((element, idx) => (
+            <BentoItem classname={classes[idx]} title={element.title}  href={`${pathname.replace('.html', '')}/projects/${element.keyId}`}>
+                {<div 
+                    slot="image"
+                    class={`
+                        background transition-scale bottom-0 left-0 top-0
+                        h-full w-full relative
+                        bg-cover bg-no-repeat brightness-110 contrast-125 ${idx === 0 || idx === 1 ? 'bg-left-bottom' : 'bg-center'} ${idx === 0 ? 'xl:bg-left-center':'xl:bg-center'}
+                        ease-in-out group hover:scale-110 duration-200`} 
+                    style={`background-image: url(${element.srcImg.src});`}>
+                    </div>}
+            </BentoItem>
+        ))
+    }
+</section>
+
+<style>
+    video {
+        object-fit: cover;
+    }    
+</style>

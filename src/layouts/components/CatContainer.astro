@@ -1,0 +1,23 @@
+---
+import box1 from '../../../public/images/cat/box1.webp';
+import box2 from '../../../public/images/cat/box2.webp';
+import box3 from '../../../public/images/cat/box3.webp';
+import catdead from '../../../public/images/cat/catdead.webp';
+import catlive from '../../../public/images/cat/catlive.webp';
+import { Image } from "astro:assets";
+import Atom from './Atom.astro';
+import '../components/styles/Cat.style.scss';
+---
+
+<div class=" mx-auto relative w-[150px] height-[150px]">
+    <!-- BOXES -->
+    <Image loading="eager" src={box3} alt={'box-top'} style={{ position: 'absolute', zIndex: 7 }} />
+    <Image loading="eager" src={box1} alt={'box-center'} style={{ position: 'absolute', zIndex: 6 }} />
+    <Image loading="eager" src={box2} alt={'box-bottom'} style={{ position: 'relative', zIndex: 5 }} />
+    <!-- CAT -->
+    <Atom />
+    <div style={{ position: 'static' }}>
+        <Image loading="eager" src={catlive} class={'catlive dark:drop-shadow-bright filter-none'} alt={'cat-live'} style={{ position: 'absolute', top: 0, zIndex: 6 }} />
+        <Image loading="eager" src={catdead} class={'catdead dark:drop-shadow-bright filter-none'} alt={'cat-dead'} style={{ position: 'absolute', bottom: 0, zIndex: 8 }} />
+    <div/>
+</div>

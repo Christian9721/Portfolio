@@ -1,0 +1,47 @@
+{
+  "site": {
+    "title": "Christian Avila",
+    "base_url": "https://christianavilacv.netlify.app",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo_width": "150",
+    "logo_height": "30",
+    "logo_text": "Christian Avila"
+  },
+
+  "settings": {
+    "search": false,
+    "sticky_header": true,
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": ""
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Get Started",
+    "link": ""
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Christian Avila",
+    "meta_image": "https://lh3.googleusercontent.com/fife/AK0iWDxxOuJgLSyaweJYmOZqFerQ7QK6qDArMkI2GtfYw5ataKVlKRO_XuqmhF5gRp5P-tK6u5AeLgb-78Q9TvCYcju9xpY2TFFbbVobj7cplLqQsp9zmXTc86uJe8jLq9_x78L9GUfBGsk5vnNSanMy_ttx0FtsrtZ8F0tFYS5QaQ9u96KkGCbYZVUTVV4AC4qNJH0xD1YVIjMtyPaxnNi_bFV9VwFSFtLI4AYm5Zp_xdmt_buZH94h5-LbP2vEixdfAa6dUVb4ItWf7S9E1dqrEjIKodiBEqwrdqPe7t5wKll3r3AZNEpAaAVei23PFhaQy02seY4yVHMpPZV5hTSdxzBgEf3PApuoBuro-7bkDWShSVRAA5OzA_LxfxMGYJjNygPaZ8ciFy46M4dmK54GaBFCDlQygE8mfOeNwkCIYaFmjDOvHXRTZSBIIM8cbvwB07G4ZQnpX4hnmzWXt37NVPx62URMBSM_h9P0lX4XbtNyu365g5Gf1QZefijzAZnVoMP6WCJiE2eeJYaeN6NJEIUn0m4Ry8LwM0G1HyAeF2Oc9AhzeEaI2mdJSu8ZE68npugaBRi-9v_PwB_liRqsWP6eWsm7nCRSXIrVWACM--dVD7aiqebaYWTizBZf3eR27rliUPdWJn2MADLO_sItJkOY-v7PxrM6lWYGKbNXf4hf_hXwuc5hLOc33GHGnV9H9Q91KYzGHc_ADyXKj9VmVSPiIKRTt9ZSa1plflGQmD_EH7fRw9aswBRz_g5gbxpkO-pHYJOmSZd5hkSXz-MV-ywYlmpLlWkehHvQ-gCgp6-BBlxDA1gte2h-STnG7kcT1RWFyLCHGuXJdznf273OUUiCvG3ukt_jykluWPctmRyIUHxCm0w2kR4e0r196nn81cGOqVAICCOYzIKYCkyyLSkBZi63KrTxsJ-UESzGQVkhfHzEZyFvyN1cOYTMg5ORodAf3C8aW4wPhJgTncEOIKcfbsadCt1KPJBZgM98wdM6Dnq1ywetD6asGQhjt0YJRTc6TPsuToT5ON_svHpeR6mgn-vuHnOfcHb26YOUIrf_-i5FcOlApv1wR9p8GgDSvQ7kpEj_xsyuZYGCcjA8AEh3O1zE8bCmkSWMht_3oRSijsnneW-okBwmMgcOSKr3n2KoMB1Vsy181fW5jslL3xh9m1GQ3E15nLJnSzGbvL60xCN9m06XCZ7-bzFvoOKXjT2kddwGWoVMS3Ey5gwtxMUrbk8MxlYvwS_VglsEsp1h84v7mNoCvZBJR80upAXhgyVie9-8riASaMj5m2AR_PQCtxVrcIiMicvJKmMZZ3yMy81uCfQh4kegb414oK2QQZ7Fmc-0ZYAgdeumsLBrrRMlUwSsFzHEmJYDqxndqC7RQPBpMjeLw1RutwetpNFy5r37GwxBIYZzV_UjPUl9EVhb5Hu5NbqvSEzedNAeG74FOSeN4k76DaXAIydDlBC0rUUorldsltyIDbICQj5sZjxYrvBgOkazqLSvsjlWeklnydvbnA=w1702-h1265",
+    "meta_description": ""
+  }
+}

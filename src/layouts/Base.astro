@@ -1,0 +1,88 @@
+---
+import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
+import config from "@/config/config.json";
+import theme from "@/config/theme.json";
+import { plainify } from "@/lib/utils/textConverter";
+import Footer from "@/partials/Footer.astro";
+import Header from "@/partials/Header.astro";
+import "@/styles/main.scss";
+import { ViewTransitions } from 'astro:transitions';
+//import { ThemeProvider } from "../layouts/components/theme-provider";
+
+// font families
+const pf = theme.fonts.font_family.primary;
+const sf = theme.fonts.font_family.secondary;
+
+// types for frontmatters
+export interface Props {
+  title?: string;
+  meta_title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  lang: string;
+}
+// distructure frontmatters
+const { title, meta_title, description, noindex, canonical, lang, image } = Astro.props;
+
+const _title_meta = plainify(meta_title ? meta_title : title ? title : config.site.title);
+const _description_meta_ = description || '';
+const _url_meta_ = `${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`;
+const _image_meta_ = `${config.site.base_url}/images/${image}`;
+---
+
+<!DOCTYPE html>
+<html lang={lang} style="height: 100%;">
+  <head>
+    <!-- favicon -->
+    <link rel="shortcut icon" href={config.site.favicon} />
+    <!-- theme meta -->
+    <meta name="theme-name" content="astroplate" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F9F9F9" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#222222" />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- google font css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={`https://fonts.googleapis.com/css2?family=${pf}${sf ? "&family=" + sf : ""}&display=swap`} rel="stylesheet" />
+    <script src="../../scripts/transitions.ts"></script>
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={_title_meta} />
+    <meta name="description" content={_description_meta_} />
+    <!-- title -->
+    <title> {_title_meta}</title>
+    <!-- canonical url -->
+    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+    <!-- noindex robots -->
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <!-- author from config.json -->
+    <meta name="author" content={config.metadata.meta_author} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={_url_meta_} />
+    <meta property="og:title" content={_title_meta} />
+    <meta property="og:description" content={_description_meta_} />
+    <meta property="og:image" content={_image_meta_} />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={_url_meta_}  />
+    <meta property="twitter:title" content={_title_meta} />
+    <meta property="twitter:description" content={_description_meta_}  />
+    <meta property="twitter:image" content={_image_meta_} />
+    <ViewTransitions />
+  </head>
+  <body>
+    <TwSizeIndicator />
+    <Header lang={lang}/>
+    <main id="main-content transition-colors duration-200" >
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

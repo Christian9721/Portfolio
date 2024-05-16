@@ -1,0 +1,44 @@
+---
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+import { getEntryBySlug } from "astro:content";
+import CatContainer from '@/components/CatContainer.astro';
+
+const about = await getEntryBySlug("about", "-index");
+const { Content } = await about.render();
+const { title, description, meta_title, image } = about.data;
+
+export function getStaticPaths () {
+ return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'es'}},
+    {params: {lang: 'jp'}},
+  ];
+}
+
+const { lang } = Astro.params;
+
+---
+
+<Base
+  title={title}
+  meta_title={meta_title}
+  description={description}
+  image={image}
+  lang={lang}
+>
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="text-center md:col-10 lg:col-7">
+          <CatContainer transition:persist transition:name="cat" />
+          <h2 set:html={markdownify(title)} class="h3 mb-6" />
+          <div class="content">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

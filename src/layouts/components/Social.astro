@@ -1,0 +1,29 @@
+---
+const { source, className, invert } = Astro.props;
+import DynamicIcon from "@/helpers/DynamicIcon";
+
+export interface ISocial {
+  name: string;
+  icon: string;
+  link: string;
+}
+---
+
+<ul class={className}>
+  {
+    source.map((social: ISocial) => (
+      <li>
+        <a
+          aria-label={social.name}
+          href={social.link}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class={invert && "invert-colors cursor-pointer"}
+        >
+          <span class="sr-only">{social.name}</span>
+          <DynamicIcon class="inline-block" icon={social.icon} />
+        </a>
+      </li>
+    ))
+  }
+</ul>

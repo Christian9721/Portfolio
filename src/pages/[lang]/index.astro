@@ -1,0 +1,166 @@
+---
+//export const prerender = true;
+import '../../styles/index.scss';
+import "../../layouts/components/styles/Timeline.style.scss";
+import "../../layouts/components/styles/Card.style.scss";
+import InfiniteScroll from "@/components/InfiniteScroll";
+import InfiniteScrollAstro from '@/components/infiniteScrollAstro.astro';
+import Base from "@/layouts/Base.astro";
+import Timeline from '../../layouts/components/Timeline.astro';
+import { English, projectCompanyCards as ENCompanyProjects, projectPersonal as ENProjectPersonal } from '../../config/language/english';
+import { Spanish, projectCompanyCards  as ESCompanyProjects, projectPersonal as ESProjectPersonal } from '../../config/language/spanish';
+import { Japanese, projectCompanyCards as JPCompanyProjects, projectPersonal as JPProjectPersonal } from '../../config/language/japanese';
+//import TabComponent from '@/components/Tab.component';
+import TabComponent from '@/components/Tab.astro';
+import CatContainer from '@/components/CatContainer.astro';
+import Social from "@/components/Social.astro";
+import social from "@/config/social.json";
+import { experticeIconLst } from "@/constants/svgs";
+import Bento from '@/components/Bento.astro';
+import PersistentVideo from "@/components/PersistentVideo.astro";
+
+export function getStaticPaths () {
+ return [
+    {params: {lang: 'en'}},
+    {params: {lang: 'es'}},
+    {params: {lang: 'jp'}},
+  ];
+}
+const { lang } = Astro.params;
+const { pathname } = Astro.url;
+
+const { experience, projects, mainButtons, pronoum, description, meta, field } = ( lang == 'en' ? English : lang == 'es' ? Spanish: Japanese);
+const companyProjects = (lang == 'en' ? ENCompanyProjects : lang == 'es' ? ESCompanyProjects : JPCompanyProjects);
+const personalProjects = (lang == 'en' ? ENProjectPersonal : lang == 'es' ? ESProjectPersonal : JPProjectPersonal);
+---
+
+<Base lang={lang} meta_title={meta.title} description={meta.description} image={meta.image}>
+  <!-- Banner -->
+  <PersistentVideo />
+  <section class="fixed sm:bottom-3 bottom-0 right-0 z-10 sm:w-80 w-3/4  sm:m-2 m-auto left-0 sm:left-auto">
+    <span id="close-btn" class="close text-neutral-800 dark:text-neutral-200">
+      &times;
+    </span>
+    <div id="videoPlaceholder" />
+  </section>
+  <section class="mt-4 mb-4 showcase-section">
+    <div class="container">
+      <div class="sm:mx-0 md:mx-10 px-6 sm:px-0 lg:mx-0 row justify-center content-center">
+        <section transition:animate="slide" class="items-center p-6 lg:items-start justify-center mb-0 mt gap-4 lg:text-left text-justify lg:col-6 flex flex-col content-center">
+          <div class={`flex md:items-end w-full items-center flex-col-reverse md:flex-row ${lang === 'jp' ? 'flex-wrap-reverse gap-x-4' : ''}`}>
+            <div class={`flex-wrap gap-2 justify-center md:justify-normal md:block flex ${lang === 'jp' ? 'w-full sm:flex-row text-center sm:text-start flex-col sm: sm:whitespace-nowrap flex-1' : ''}`}>
+              <span class="font-secondary font-black text-4xl relative md:top-2 top-[5px] bg-grad bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text" style="-webkit-text-fill-color: transparent;">{lang !== 'jp' ? pronoum : pronoum.split(',')[0]}</span>
+              <h1 class={`${lang === 'jp' && 'flex items-center flex-wrap justify-center sm:justify-normal'}`}>Christian Avila <span class={`font-secondary whitespace-nowrap font-black text-4xl relative bg-grad bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text ${lang === 'jp' && 'inline-block'} w-[4ch]`} style="-webkit-text-fill-color: transparent;">{lang === 'jp' && pronoum.split(',')[1]}</span></h1>
+              <span class="justify-center flex items-center bg-theme-light dark:bg-darkmode-theme-light sm:text-start text-center sm:w-auto w-full dark:text-neutral-200 font-medium px-2.5 py-0.5 rounded text-neutral-800 color-neutral-400 border border-neutral-500 text-lg text-base tracking-[0.2em] uppercase">{field}</span>
+            </div>
+            <CatContainer/>
+          </div>
+          <div>
+            <p style="word-spacing: -0.05em" class="hyphens-auto items-center text-justify" set:html={description}/>
+          </div>
+          <div class="flex w-full gap-4 sm:gap-6 sm:flex-nowrap flex-wrap">
+            <a href={`/documents/Christian Avila ${lang.toUpperCase()}.pdf`} download={`Christian_Avila_Frontend_${lang.toUpperCase()}_CV.pdf`} class="cursor-pointer md:w-1/2 w-full"> 
+              <button type="button" class="justify-center w-full flex items-center btn btn-primary">
+                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                <span>{mainButtons.cv}</span>
+              </button>
+            </a>
+            <Social source={social.main} className="items-center md:w-1/2 w-full social-icons flex sm:justify-evenly justify-center" containerClass="bg-transparent" invert/>
+          </div>
+        </section>
+        <div transition:animate="none" class="infinite-scroll-root flex lg:col-6 content-center items-center justify-center">
+          <Bento data={personalProjects} />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Banner -->
+  <!-- Features -->
+  <div class="mt-0 section-sm bg-section" transition:animate="fade">
+    <section>
+      <div class="container">
+        <div class="flex flex-wrap justify-center content-center gap-8 items-center grid--large">
+          <h2 class="text-center mb-12">{experience.title}</h2>
+          {experience && <Timeline data={experience.data} achievements={experience.achievements} transition:animate="fade"/>}
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="mt-0 section-sm">
+    <section>
+      <div class="container">
+        <div class="flex flex-wrap justify-center content-center gap-8 items-center grid--large">
+          <h2 class="text-center mb-12">{projects.title}</h2>
+          <div class="gap-7 justify-center w-full">
+            <TabComponent pathname={pathname.replace('.html', '')} content={projects} companyProjects={companyProjects} personalProjects={personalProjects} />
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div> 
+  <!-- /Features -->
+  {/*<Testimonial testimonial={testimonial} />*/}
+</Base>
+<style>
+  .showcase-section {
+    display: 'relative';
+  }
+  .showcase-section::before {
+    content: '';
+    position: absolute;
+    background-image: radial-gradient(circle at 1px 1px, #3b82f6, 1px, transparent 0);
+    background-size: 40px 40px;
+    /*background-image: linear-gradient(to right, #3b82f6 1px, transparent 1px), linear-gradient(to bottom, #3b82f6 1px, transparent 1px);*/
+    mask-image: radial-gradient(circle,#000, transparent 80%);
+    /*background-size: 40px 40px;*/
+    width: 100%;
+    height: 36rem;
+    opacity: 0.5;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    height: fit-content;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .close:hover,
+  .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+</style>
+
+<script>
+  function check() {
+    if (localStorage.getItem("currentVid") === null) {
+      localStorage.setItem("currentVid", JSON.stringify("{}"))
+    }
+  }
+  function init() {
+    const button = document.getElementById("close-btn");
+    const video = document.getElementById("video-player");
+
+    if (!button) return;
+    const section = button.parentNode as HTMLElement;
+
+    if (!video) button?.classList.add("hidden");
+    else button?.classList.remove("hidden");
+
+    section?.addEventListener('click', () => {
+      section?.classList.add("hidden");
+    });
+  }
+  init();
+  check();
+  document.addEventListener("astro:after-swap", init)
+</script>

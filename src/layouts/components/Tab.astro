@@ -1,0 +1,124 @@
+---
+import type { TProjectsContent  } from "@/interfaces/languages.interface";
+import type { IProjectCard } from "@/interfaces/project.interface";
+import CardShowcase from "./CardShowcase.component";
+import Profile from "@/assets/icons/Profile.icon.astro";
+import Briefcase from "@/assets/icons/Briefcase.icon.astro";
+
+interface IProps {
+  content: TProjectsContent,
+  companyProjects: IProjectCard[];
+  personalProjects: IProjectCard[];
+  pathname: string;
+}
+
+const { companyProjects, content, pathname, personalProjects } = Astro.props as IProps;
+---
+
+<div class="mb-4">
+    <ul class="text-sm font-medium text-center text-gray-500 rounded-lg shadow flex dark:divide-gray-700 dark:text-gray-400">
+        <li class="w-full z-10 flex">
+            <button id="client-btn" class="gap-2 flex justify-center content-center w-full p-2 border-gray-200 border-r dark:border-gray-700 rounded-s-lg" data-tabs-target="#styled-client" type="button" role="tab" aria-selected="false">
+                <Briefcase className="fill-neutral-800 dark:fill-neutral-300" />
+                {content.tabs[0]}
+            </button>
+        </li>
+        <li class="w-full z-10 flex">
+            <button id="personal-btn" class="gap-2 flex justify-center content-center w-full p-2 border-gray-200 border-s-0 dark:border-gray-700 rounded-e-lg" data-tabs-target="#styled-personal" type="button" role="tab" aria-selected="false">
+                <Profile className="fill-neutral-800 dark:fill-neutral-300" />
+                {content.tabs[1]}
+            </button>
+        </li>
+    </ul>
+</div>
+<div id="default-styled-tab-content">
+    <div class="flex-wrap gap-7 justify-center p-4 rounded-lg relative" id="styled-client" role="tabpanel" aria-labelledby="profile-tab">
+        {companyProjects.map((prj, idx) => (
+            <CardShowcase href={pathname} {...prj} />
+          ))}
+    </div>
+    <div class="hidden flex-wrap gap-7 justify-center p-4 rounded-lg relative" id="styled-personal" role="tabpanel" aria-labelledby="dashboard-tab">
+        {personalProjects.map((prj, idx) => (
+            <CardShowcase href={pathname} {...prj} />
+        ))}
+    </div>
+</div>
+
+<style>
+    .active-element {
+       display: flex;
+       animation: reveal-tabs 255ms linear;
+    }
+    @keyframes reveal-tabs {
+        0% {
+            transform: translateY(20%);
+            opacity: 0;
+        }
+        25% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    function init() {
+        const activeClasses = ["text-neutral-900", "bg-neutral-100", "dark:bg-neutral-700", "dark:text-white"];
+        const inactiveClasses = ["bg-white", "hover:text-neutral-700", "hover:bg-neutral-50", "dark:hover:text-white", "dark:bg-neutral-800", "dark:hover:bg-neutral-700"];
+
+        const clientDiv = document.getElementById("styled-client");
+        const personalDiv = document.getElementById("styled-personal");
+
+        const clientBtn = document.getElementById("client-btn");
+        const personalBtn = document.getElementById("personal-btn");
+
+        function clientActive() {
+            inactiveClasses.forEach(className => {
+                clientBtn?.classList.remove(className);
+                personalBtn?.classList.add(className);
+            });
+            activeClasses.forEach(className => {
+                personalBtn?.classList.remove(className);
+                clientBtn?.classList.add(className);
+            });
+
+            clientDiv?.classList.remove("hidden");
+            clientDiv?.classList.add("active-element");
+
+            personalDiv?.classList.remove("active-element");
+            personalDiv?.classList.add("hidden");
+        }
+
+        function personalActive() {
+            inactiveClasses.forEach(className => {
+                personalBtn?.classList.remove(className);
+                clientBtn?.classList.add(className);
+            });
+            activeClasses.forEach(className => {
+                clientBtn?.classList.remove(className);
+                personalBtn?.classList.add(className);
+            });
+
+            clientDiv?.classList.remove("active-element");
+            clientDiv?.classList.add("hidden");
+
+            personalDiv?.classList.remove("hidden");
+            personalDiv?.classList.add("active-element");
+        }
+        clientActive();
+        //personalActive();
+        clientBtn?.addEventListener('click',  () => {
+            console.log("CLIENT");
+            clientActive();
+        });
+        personalBtn?.addEventListener('click', () => {
+            console.log("PERSONAL");
+            personalActive();
+        });
+    }
+    init();
+    document.addEventListener("astro:after-swap", init)
+</script>

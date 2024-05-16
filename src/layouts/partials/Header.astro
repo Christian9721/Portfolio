@@ -1,0 +1,64 @@
+---
+import Logo from "@/components/Logo.astro";
+import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
+import config from "@/config/config.json";
+import menu from "@/config/menu.json";
+import { IoSearch } from "react-icons/io5/index.js";
+import LangSwitch from '@/components/LangSwitcher.astro';
+import { Image } from "astro:assets";
+import HeaderIco from 'public/images/headerico.webp';
+
+export interface ChildNavigationLink {
+  name: string;
+  url: string;
+}
+
+export interface NavigationLink {
+  name: string;
+  url: string;
+  hasChildren?: boolean;
+  children?: ChildNavigationLink[];
+}
+
+const { main }: { main: NavigationLink[] } = menu;
+const { navigation_button, settings } = config;
+const { pathname } = Astro.url;
+const { lang } = Astro.props;
+
+---
+
+<header class={`header z-30 ${settings.sticky_header && "sticky top-0"} min-h-[4rem] flex backdrop-blur-md transition-colors duration-200 bg-neutral-100/50 dark:bg-neutral-900/50  py-2`}>
+  <nav class="navbar container pl-6">
+    <!-- logo -->
+    <a href={`/${lang}/`}>
+      <section class="flex gap-2">
+        <Image src={HeaderIco} alt={"header-icon"} class="rounded-full hue-rotate-90" width={46} height={46}/>
+        <div class="sm:flex flex-col hidden">
+          <span class="text-base bold">Christian Avila</span>
+          <span class="text-sm">Software Engineer</span>
+        </div>
+      </section>
+    </a>
+    <!--<CatContainer /> -->
+    <!-- navbar toggler -->
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0 gap-4">
+      {
+        settings.search && (
+          <div class="relative mb-6">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+              <IoSearch />
+            </div>
+            <input placeholder="Search" type="text" id="searcher" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+          </div>
+        )
+      }
+      <LangSwitch lang={lang} />
+      <ThemeSwitcher className="mr-5" />
+    </div>
+  </nav>
+</header>
+
+<script>
+
+</script>

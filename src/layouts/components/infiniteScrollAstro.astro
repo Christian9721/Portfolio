@@ -1,0 +1,73 @@
+---
+import type { TExpertice } from '@/constants/svgs.ts';
+interface IProps {
+    duration: number;
+    transition: number;
+    data: TExpertice[];
+  }
+  const { duration, transition, data } = Astro.props as IProps;
+---
+<div id="carousel-crosfade" data-duration={duration}
+ class="flex align-middle items-center relative overflow-hidden after:clear-both after:block after:content-[''] lg:col-5 ml-auto">
+<div class="infinite-scroll-root absolute"/>
+{
+    data.map(element => (
+        <div class={`absolute flex w-fit flex-col items-center align-middle float-left !transform-none transition-opacity duration-[${transition}ms] ease-in-out motion-reduce:transition-none`}
+            style="opacity: 0">
+            <span class="uppercase">-{element.title}-</span>
+            <div class="flex-wrap flex gap-4">
+                {
+                    element.data.map(data => (
+                        <div class="p-4 rounded-sm bg-neutral-500" set:html={data.icon} />
+                    ))
+                }
+            </div>
+        </div>
+    ))
+}
+</div>
+
+<style>
+    .infinite-scroll-root {
+      display: 'relative';
+      
+    }
+    .infinite-scroll-root::before {
+      content: '';
+      /*background-image: radial-gradient(circle at 1px 1px, linear-gradient(90deg, #3b82f6 0%, #38bdf8  100% ) 1px, transparent 0);*/
+      background-image: radial-gradient(circle at 1px 1px, #3b82f6, 1px, transparent 0);
+      mask-image: radial-gradient(circle,#000, transparent 80%);
+      background-size: 40px 40px;
+      width: 100%;
+      height: 90%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  
+</style>
+
+<script>
+    function init() {
+        let index = 0;
+        const root = document.getElementById("carousel-crosfade") as HTMLElement;
+        const children = root.children as HTMLCollection;
+        const timer = root.getAttribute('data-duration') as string;
+        children[0].setAttribute('style', 'opacity: 1');
+
+        function getNext(arr: HTMLCollection) {
+            let length = arr.length;
+            //set 0 to current
+            arr[index].setAttribute('style', 'opacity: 0');
+            index ++;
+            const nextValue = (index % length + length) % length;
+            //set 1 to next
+            arr[nextValue].setAttribute('style', 'opacity: 1');
+            index = nextValue;
+        }
+        const intervalID = setInterval(() => getNext(children), Number(timer));
+    }
+
+    //init();
+    document.addEventListener("astro:after-swap", init)
+</script>
