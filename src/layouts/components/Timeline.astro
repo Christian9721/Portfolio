@@ -16,8 +16,8 @@ const { pathname } = Astro.url;
     data.map((i, idx) => (
       <li class="timeline-event">
         <label class="dark:bg-neutral-500 bg-neutral-950  outline outline-[10px] outline-[#f9f9f9] dark:outline-darkmode-theme-light timeline-event-icon"></label>
-        <div class="pl-0 pt-8 pb-8 pr-8 md:pl-8 flex gap-4 flex-wrap timeline-event-copy justify-between">
-          <section class={`mr-16 ${i.projects.length > 0 ? 'lg:mr-0 w-full lg:w-1/2 xl:w-1/3' : 'lg:mr-16 lg:w-full w-full xl:w-4/5'}`}>
+        <div class="pl-0 pt-8 pb-8 pr-8 md:pl-8 flex gap-8 flex-wrap timeline-event-copy justify-between">
+          <section class={`mr-16 ${i.projects.length > 0 ? 'lg:mr-0 w-full lg:w-1/2' : 'lg:mr-16 lg:w-full w-full xl:w-4/5 flex-1'}`}>
             <p class="dark:bg-neutral-500 bg-neutral-950 timeline-event-thumbnail">
               {i.timePeriod}
             </p>

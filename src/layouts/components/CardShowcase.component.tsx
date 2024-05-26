@@ -48,8 +48,8 @@ const CardShowcase = (props: IProps) => {
     >
       <div
         className={`${
-          isTimeline && "md:mr-0 mr-16"
-        } project-card max-w-full md:max-w-sm bg-white border border-gray-200 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:bg-darkmode-theme-light dark:border-gray-700 relative h-full`}
+          isTimeline ? "md:mr-0 mr-16" : "max-w-full md:max-w-sm"
+        } project-card bg-white border border-gray-200 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:bg-darkmode-theme-light dark:border-gray-700 relative h-full`}
       >
         {!hideDate && (
           <div className="z-10 absolute top-0 left-0 m-2 p-1 rounded-md bg-neutral-900/40 backdrop-blur-sm">
