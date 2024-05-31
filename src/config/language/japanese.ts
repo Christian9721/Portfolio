@@ -137,7 +137,8 @@ export const Japanese: ILanguage = {
                     },
                     {
                       title: "品質保証",
-                      description: `私は、JestとCypressを使用して厳密なテスト手順を実装し、アプリケーションの安定性を維持し、リリース後の欠陥を削減しました。テストカバレッジは85％でした。`,
+                      description: `私は、JestとCypressを使用して厳密なテスト手順を実装し、アプリケーションの安定性を維持し、リリース後の欠陥を削減しました。テストカバレッジは85％でした。<chart data={[80,20]} type="donut" width="auto" text="none" substring="カバレッジ"/>`,
+                      isDefaultOpen: true,
                     },
                     {
                       title: "最適化",
@@ -159,7 +160,8 @@ export const Japanese: ILanguage = {
                     },
                     {
                       title: "新規クライアント",
-                      description: `「Brigada de Rescate Topos de Tlaltelolco A.C.」との提携を確立し、プラットフォーム上でのコース提供を開始しました。`,
+                      description: `「Brigada de Rescate Topos de Tlaltelolco A.C.」との提携を確立し、プラットフォーム上でのコース提供を開始しました。その後、このプラットフォームが美しいと感じるユーザーが大幅に増加した。<chart data={[70,30]} type="line" width="100%" text="none" substring="新規のお客様"/>`,
+                      isDefaultOpen: true,
                     },
                     {
                       title: "UX/UIの改善",

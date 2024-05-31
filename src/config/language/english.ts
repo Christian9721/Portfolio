@@ -150,7 +150,7 @@ export const English: ILanguage = {
                     {
                       title: "Optimization",
                       description: `System efficiency and performance was continuously improved, streamlining processes
-              to achieve impactful results; component load times were optimized by up to 70%. <chart data={[70,30]} type="donut" width="auto" text="none" substring="optimization"/>`,
+              to achieve impactful results; component load times were optimized by up to 70%.`,
                     },
                   ],
                   projects: [Projects.currie, Projects.accesos]
@@ -168,7 +168,7 @@ export const English: ILanguage = {
                     {
                       title: "New Clients",
                       description: `An alliance was established with “Brigada de Rescate Topos de Tlaltelolco A.C.” to provide
-              courses on the platform.<chart data={[70,30]} type="line" width="100%" text="none" substring="New Clients"/>`,
+              courses on the platform. Then there was a significant increase in users as they found the platform beautiful.<chart data={[70,30]} type="line" width="100%" text="none" substring="New Clients"/>`,
                       isDefaultOpen: true,
                     },
                     {

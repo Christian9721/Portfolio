@@ -16,10 +16,10 @@ const { id = "dimensions", text, percent, subtext, width } = props;
     data-text={text} 
     data-subtext={subtext} 
     data-percent={percent} 
-    style={`width: ${width}`}
-    class="flex flex-col items-center gap-y-2"
+    style="width: 100%"
+    class="relative flex flex-col items-center gap-y-2"
 >
-    <canvas id={id} class="z-10 backdrop-blur-md">
+    <canvas id={id} class="relative z-10 max-w-[100%] md:max-w-md">
          <!--  <script is:inline lang="ts" type="module">
             import Chart from 'chart.js/auto';
 
@@ -98,8 +98,9 @@ const { id = "dimensions", text, percent, subtext, width } = props;
             init();
         </script> -->
     </canvas>
-    <label class="font-bold capitalize">{subtext}</label>
+    <label class="absolute z-50 top-[45%] md:text-5xl sm:text-4xl text-2xl font-bold">85%</label>
 </div>
+<label class="font-bold capitalize">{subtext}</label>
 
 <script >
     import Chart, { type ChartItem, type Plugin, type ChartTypeRegistry } from 'chart.js/auto';
@@ -119,7 +120,7 @@ const { id = "dimensions", text, percent, subtext, width } = props;
             //labels: [ ],
             datasets: [{
                 //label: '',
-                data: [80, 20],
+                data: [85, 15],
                 backgroundColor: [
                     gradient,
                     'rgb(255,255,255,0.25)'
@@ -130,7 +131,7 @@ const { id = "dimensions", text, percent, subtext, width } = props;
             }]
         };
 
-        const centerTextPlugin/*:Plugin */= {
+       /* const centerTextPlugin = {
             id: 'centerText',
             beforeDraw: (chart: any) => {
                 const { ctx, width, height } = chart;
@@ -148,7 +149,7 @@ const { id = "dimensions", text, percent, subtext, width } = props;
                 ctx.fillText(textPrimary, textPrimaryX, textPrimaryY);
                 ctx.save();
             }
-        };
+        };*/
 
         new Chart(
             document.getElementById('dimensions') as ChartItem,
@@ -161,18 +162,21 @@ const { id = "dimensions", text, percent, subtext, width } = props;
                         legend: { display: false },
                         tooltip: { enabled: false }
                     },
-                    elements: {}
+                    elements: {},
+                    responsive: true,
+                    maintainAspectRatio: true
                 },
-                plugins: [centerTextPlugin]
+                //plugins: [centerTextPlugin]
             }
         );
     };
     init();
+    document.addEventListener("astro:after-swap", init)
 </script>
 
 <style>
     #dimensions {
         z-index: 50;
-        clip-path: circle(50% at center);
+        /*clip-path: circle(50% at center);*/
     }
 </style>

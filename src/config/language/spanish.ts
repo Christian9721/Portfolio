@@ -132,7 +132,8 @@ export const Spanish: ILanguage = {
                     },
                     {
                       title: "Aseguramiento de calidad",
-                      description: `Implementé procedimientos de prueba rigurosos para mantener la estabilidad de la aplicación y reducir los defectos posteriores al lanzamiento utilizando Jest y Cypress con una cobertura del 85%.`,
+                      description: `Implementé procedimientos de prueba rigurosos para mantener la estabilidad de la aplicación y reducir los defectos posteriores al lanzamiento utilizando Jest y Cypress con una cobertura del 85%. <chart data={[80,20]} type="donut" width="auto" text="none" substring="cobertura"/>`,
+                      isDefaultOpen: true
                     },
                     {
                       title: "Optimización",
@@ -151,7 +152,8 @@ export const Spanish: ILanguage = {
                     },
                     {
                       title: "Nuevos Clientes",
-                      description: `Se estableció una alianza con la "Brigada de Rescate Topos de Tlaltelolco A.C." para ofrecer cursos en la plataforma.`,
+                      description: `Se estableció una alianza con la "Brigada de Rescate Topos de Tlaltelolco A.C." para ofrecer cursos en la plataforma. Después hubo un incremento significativo de usuarios ya que la plataforma les pareció hermosa. <chart data={[70,30]} type="line" width="100%" text="none" substring="Nuevos Clientes"/>`,
+                      isDefaultOpen: true
                     },
                     {
                       title: "Mejora del UX/UI",

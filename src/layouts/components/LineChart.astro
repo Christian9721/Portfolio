@@ -16,7 +16,6 @@ const { id = "lineChart", text, percent, subtext, width } = props;
     data-text={text} 
     data-subtext={subtext} 
     data-percent={percent} 
-    
     class="lineContainer flex flex-col items-center gap-y-2" style="width: 100%"
 >
     <canvas id={id} class="z-10 backdrop-blur-md max-w-[100%] md:max-w-[530px]">
@@ -123,10 +122,12 @@ const { id = "lineChart", text, percent, subtext, width } = props;
         gradientFill.addColorStop(0, firstColor); // azul semi-transparente
         gradientFill.addColorStop(1, 'rgba(249, 249, 249, 0)');   // transparente
         
+        const dataSet = [1230, 1250, 1300, 1450, 2050, 2200];
+
         const data = {
             labels: ["Jan","Feb","Mar","Apr","May","Jun"],
             datasets: [{
-                data: [1230, 1250, 1300, 1450, 2050, 2200],
+                data: dataSet,
                 fill: true,
                 hoverOffset: 4,
                 backgroundColor: gradientFill,
@@ -151,7 +152,7 @@ const { id = "lineChart", text, percent, subtext, width } = props;
                             borderWidth: 4
                         },
                         point: {
-                            radius: 0
+                            radius: dataSet.map((value, index) => index === 3 ? 10 : 0),
                         }
                     },
                     scales: {
