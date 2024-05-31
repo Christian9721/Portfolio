@@ -16,10 +16,10 @@ const { id = "lineChart", text, percent, subtext, width } = props;
     data-text={text} 
     data-subtext={subtext} 
     data-percent={percent} 
-    style={`width: ${width}`}
-    class="flex flex-col items-center gap-y-2"
+    
+    class="lineContainer flex flex-col items-center gap-y-2" style="width: 100%"
 >
-    <canvas id={id} class="z-10 backdrop-blur-md">
+    <canvas id={id} class="z-10 backdrop-blur-md max-w-[100%] md:max-w-[530px]">
          <!--  <script is:inline lang="ts" type="module">
             import Chart from 'chart.js/auto';
 
@@ -167,16 +167,20 @@ const { id = "lineChart", text, percent, subtext, width } = props;
                                 display: true
                             }
                         }
-                    }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: true
                 },
             }
         );
     };
     init();
+    document.addEventListener("astro:after-swap", init)
 </script>
 
 <style>
     #lineChart {
+        
         z-index: 50;
     }
 </style>

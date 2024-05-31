@@ -144,13 +144,13 @@ export const English: ILanguage = {
                     {
                       title: "Quality assurance",
                       description: `I implemented rigorous testing procedures to maintain application stability and
-              reduce post-release defects using Jest & Cypress with 85% coverage. <chart data={[80,20]} type="donut" width="10rem" text="none" substring="coverage"/>`,
+              reduce post-release defects using Jest & Cypress with 85% coverage. <chart data={[80,20]} type="donut" width="auto" text="none" substring="coverage"/>`,
                       isDefaultOpen: true
                     },
                     {
                       title: "Optimization",
                       description: `System efficiency and performance was continuously improved, streamlining processes
-              to achieve impactful results; component load times were optimized by up to 70%. <chart data={[70,30]} type="donut" width="10rem" text="none" substring="optimization"/>`,
+              to achieve impactful results; component load times were optimized by up to 70%. <chart data={[70,30]} type="donut" width="auto" text="none" substring="optimization"/>`,
                     },
                   ],
                   projects: [Projects.currie, Projects.accesos]
