@@ -88,7 +88,8 @@ export const English: ILanguage = {
     },
     experience: {
         title: "Experience",
-        achievements: 'Achievements',
+        achievementsText: 'Achievements',
+        knowledgeText: "What I've learned?",
         data: [
             {
                 ...M6CONNECT,
@@ -143,12 +144,13 @@ export const English: ILanguage = {
                     {
                       title: "Quality assurance",
                       description: `I implemented rigorous testing procedures to maintain application stability and
-              reduce post-release defects using Jest & Cypress with 85% coverage.`,
+              reduce post-release defects using Jest & Cypress with 85% coverage. <chart data={[80,20]} type="donut" width="10rem" text="none" substring="coverage"/>`,
+                      isDefaultOpen: true
                     },
                     {
                       title: "Optimization",
                       description: `System efficiency and performance was continuously improved, streamlining processes
-              to achieve impactful results; component load times were optimized by up to 70%.`,
+              to achieve impactful results; component load times were optimized by up to 70%. <chart data={[70,30]} type="donut" width="10rem" text="none" substring="optimization"/>`,
                     },
                   ],
                   projects: [Projects.currie, Projects.accesos]
@@ -166,7 +168,8 @@ export const English: ILanguage = {
                     {
                       title: "New Clients",
                       description: `An alliance was established with “Brigada de Rescate Topos de Tlaltelolco A.C.” to provide
-              courses on the platform.`,
+              courses on the platform.<chart data={[70,30]} type="line" width="100%" text="none" substring="New Clients"/>`,
+                      isDefaultOpen: true,
                     },
                     {
                       title: "UX/UI enhance",

@@ -25,6 +25,7 @@
     "animejs": "^3.2.1",
     "astro": "^3.6.0",
     "astro-auto-import": "^0.3.1",
+    "chart.js": "^4.4.3",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "disqus-react": "^1.1.5",

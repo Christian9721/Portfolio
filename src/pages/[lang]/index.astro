@@ -18,6 +18,7 @@ import social from "@/config/social.json";
 import { experticeIconLst } from "@/constants/svgs";
 import Bento from '@/components/Bento.astro';
 import PersistentVideo from "@/components/PersistentVideo.astro";
+import DoughnutChart from '@/components/DoughnutChart.astro';
 
 export function getStaticPaths () {
  return [
@@ -79,9 +80,10 @@ const personalProjects = (lang == 'en' ? ENProjectPersonal : lang == 'es' ? ESPr
   <div class="mt-0 section-sm bg-section" transition:animate="fade">
     <section>
       <div class="container">
+        
         <div class="flex flex-wrap justify-center content-center gap-8 items-center grid--large">
-          <h2 class="text-center mb-12">{experience.title}</h2>
-          {experience && <Timeline data={experience.data} achievements={experience.achievements} transition:animate="fade"/>}
+          <h2 class="text-center mb-12 uppercase">💼 {experience.title}</h2>
+          {experience && <Timeline data={experience.data} achievementsText={experience.achievementsText} transition:animate="fade"/>}
         </div>
       </div>
     </section>
@@ -90,7 +92,7 @@ const personalProjects = (lang == 'en' ? ENProjectPersonal : lang == 'es' ? ESPr
     <section>
       <div class="container">
         <div class="flex flex-wrap justify-center content-center gap-8 items-center grid--large">
-          <h2 class="text-center mb-12">{projects.title}</h2>
+          <h2 class="text-center mb-12 uppercase">🚀 {projects.title}</h2>
           <div class="gap-7 justify-center w-full">
             <TabComponent pathname={pathname.replace('.html', '')} content={projects} companyProjects={companyProjects} personalProjects={personalProjects} />
           </div>

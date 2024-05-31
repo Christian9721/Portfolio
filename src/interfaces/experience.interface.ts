@@ -8,7 +8,8 @@ export interface IDescription {
 
 interface IAchievement {
   title: string | JSX.Element;
-  description: string | JSX.Element;
+  description: string;
+  isDefaultOpen?: boolean;
 }
 
 export interface IExperience {
@@ -19,4 +20,5 @@ export interface IExperience {
   company: JSX.Element | string;
   projects: IProjectCard[];
   achievements?: IAchievement[];
+  knowledge?: string[];
 }

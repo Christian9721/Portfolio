@@ -73,7 +73,8 @@ export const projectPersonal: IProjectCard[] = [
 ];
 
 export const Japanese: ILanguage = {
-    meta: {
+  catTag: "Quantum computing student!",  
+  meta: {
       title: 'Christian Antonio Avila CV 🇯🇵',
       image: 'jpico.webp',
       description: `私は, 美しいユーザーフレンドリーなインターフェース（UI / UX）を作成することを重視したデジタルエクスペリエンスクリエーターです。私の専門知識は、堅牢でSEOに優しいアーキテクチャのためのデザインパターンとクリーンなコードの記述にまで及びます。あなたのビジョンを次のレベルに引き上げ、本当に特別なものを作りましょう。`
@@ -87,7 +88,8 @@ export const Japanese: ILanguage = {
     },
     experience: {
         title: "職務経験",
-        achievements: "業績",
+        achievementsText: "業績",
+        knowledgeText: "私が学んだことは？",
         data: [
             {
                 ...M6CONNECT,

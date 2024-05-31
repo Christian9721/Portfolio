@@ -73,6 +73,7 @@ export const projectPersonal: IProjectCard[] = [
 ];
 
 export const Spanish: ILanguage = {
+  catTag: "Quantum computing student!",
   meta: {
     title: 'Christian Antonio Avila CV 🇲🇽',
     description: `Soy un creador de experiencias digitales con un enfoque en crear interfaces hermosas y amigables para el usuario (UI/UX). Mi experiencia se extiende a los patrones de diseño y escribir código limpio para arquitecturas sólidas y amigables con SEO. ¡Llevemos tu visión al siguiente nivel y creemos algo verdaderamente excepcional!`,
@@ -87,7 +88,8 @@ export const Spanish: ILanguage = {
     },
     experience: {
         title: "Experiencia",
-        achievements: "Logros",
+        achievementsText: "Logros",
+        knowledgeText: "¿Que aprendí?",
         data: [
             {
                 ...M6CONNECT,

@@ -10,7 +10,8 @@ export type TMeta = {
 
 export type TExperienceContent = {
     title: string;
-    achievements: string;
+    achievementsText: string;
+    knowledgeText?: string;
     data: IExperience[];
 }
 
