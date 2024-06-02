@@ -16,7 +16,7 @@ const { id = "lineChart", text, percent, subtext, width } = props;
     data-text={text} 
     data-subtext={subtext} 
     data-percent={percent} 
-    class="lineContainer flex flex-col items-center gap-y-2" style="width: 100%"
+    class="sm:flex lineContainer hidden flex-col items-center gap-y-2" style="width: 100%"
 >
     <canvas id={id} class="z-10 backdrop-blur-md max-w-[100%] md:max-w-[530px]">
          <!--  <script is:inline lang="ts" type="module">
@@ -106,6 +106,7 @@ const { id = "lineChart", text, percent, subtext, width } = props;
     const transparentColor = "transparent";
     
     async function init() {
+
         const canvas = await document.getElementById("lineChart") as HTMLCanvasElement;
         const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
