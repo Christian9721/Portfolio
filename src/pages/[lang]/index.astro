@@ -51,7 +51,7 @@ const personalProjects = (lang == 'en' ? ENProjectPersonal : lang == 'es' ? ESPr
           <div class={`flex md:items-end w-full items-center flex-col-reverse md:flex-row ${lang === 'jp' ? 'flex-wrap-reverse gap-x-4' : ''}`}>
             <div class={`flex-wrap gap-2 justify-center md:justify-normal md:block flex ${lang === 'jp' ? 'w-full sm:flex-row text-center sm:text-start flex-col sm: sm:whitespace-nowrap flex-1' : ''}`}>
               <span class="font-secondary font-black text-4xl relative md:top-2 top-[5px] bg-grad bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text" style="-webkit-text-fill-color: transparent;">{lang !== 'jp' ? pronoum : pronoum.split(',')[0]}</span>
-              <h1 class={`${lang === 'jp' && 'flex items-center flex-wrap justify-center sm:justify-normal'}`}>Christian Avila <span class={`font-secondary whitespace-nowrap font-black text-4xl relative bg-grad bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text ${lang === 'jp' && 'inline-block'} w-[4ch]`} style="-webkit-text-fill-color: transparent;">{lang === 'jp' && pronoum.split(',')[1]}</span></h1>
+              <h1 class={`${lang === 'jp' ? 'flex items-center flex-wrap justify-center sm:justify-normal' : 'text-center sm:text-start'}`}>Christian Avila <span class={`font-secondary whitespace-nowrap font-black text-4xl relative bg-grad bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text ${lang === 'jp' && 'inline-block'} w-[4ch]`} style="-webkit-text-fill-color: transparent;">{lang === 'jp' && pronoum.split(',')[1]}</span></h1>
               <span class="justify-center flex items-center bg-theme-light dark:bg-darkmode-theme-light sm:text-start text-center sm:w-auto w-full dark:text-neutral-200 font-medium px-2.5 py-0.5 rounded text-neutral-800 color-neutral-400 border border-neutral-500 text-lg text-base tracking-[0.2em] uppercase">{field}</span>
             </div>
             <CatContainer/>
@@ -80,7 +80,6 @@ const personalProjects = (lang == 'en' ? ENProjectPersonal : lang == 'es' ? ESPr
   <div class="mt-0 section-sm bg-section" transition:animate="fade">
     <section>
       <div class="container">
-        
         <div class="flex flex-wrap justify-center content-center gap-8 items-center grid--large">
           <h2 class="text-center mb-12 uppercase">💼 {experience.title}</h2>
           {experience && <Timeline data={experience.data} achievementsText={experience.achievementsText} transition:animate="fade"/>}
